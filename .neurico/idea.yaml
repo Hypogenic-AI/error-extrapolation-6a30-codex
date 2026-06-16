@@ -1,0 +1,25 @@
+idea:
+  title: Error Extrapolation
+  domain: artificial_intelligence
+  hypothesis: 'The types and rates of errors made by large language models (LLMs)
+    when summarizing large amounts of data may vary as document length increases;
+    some errors may remain stable while others may grow with length. Investigating
+    this scaling behavior could reveal whether LLMs maintain their advantage in regimes
+    where humans cannot process the same volume of information.
+
+    '
+  background:
+    description: "LLMs can already do at least one thing better than most humans\u2014\
+      ingest huge amounts of data and summarize aspects of it. If we look at how this\
+      \ scales with document length, what kind of errors are stable over length and\
+      \ which ones grow? Will this transfer to other regimes where humans can't even\
+      \ attempt to do the same thing as an LLM?\n"
+  metadata:
+    author: Ari Holtzman
+    source: IdeaHub
+    source_url: https://hypogenic.ai/ideahub/idea/mAWgtn8xffkwpABBiSB2
+    idea_id: error_extrapolation_20260616_141215_b143bed7
+    created_at: '2026-06-16T14:12:15.257973'
+    status: submitted
+    github_repo_name: error-extrapolation-6a30-codex
+    github_repo_url: https://github.com/Hypogenic-AI/error-extrapolation-6a30-codex
