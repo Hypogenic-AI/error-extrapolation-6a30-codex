@@ -1,0 +1,65 @@
+{
+  "timestamp_utc": "2026-06-16T15:12:15.818333+00:00",
+  "python": "3.12.8 (main, Dec 19 2024, 14:33:20) [Clang 18.1.8 ]",
+  "seed": 42,
+  "requested_models": [
+    "gpt-4.1-mini",
+    "gpt-5-mini"
+  ],
+  "available_env_keys": [
+    "GEMINI_CLI_TRUST_WORKSPACE",
+    "OPENAI_API_KEY",
+    "OPENROUTER_KEY"
+  ],
+  "gpu": "name, memory.total [MiB], memory.free [MiB]\nNVIDIA RTX A6000, 49140 MiB, 48541 MiB\nNVIDIA RTX A6000, 49140 MiB, 48541 MiB\nNVIDIA RTX A6000, 49140 MiB, 48541 MiB\nNVIDIA RTX A6000, 49140 MiB, 48541 MiB",
+  "openai_model_matches": {
+    "gpt-4.1": [
+      "gpt-4.1",
+      "gpt-4.1-2025-04-14",
+      "gpt-4.1-mini",
+      "gpt-4.1-mini-2025-04-14",
+      "gpt-4.1-nano",
+      "gpt-4.1-nano-2025-04-14"
+    ],
+    "gpt-5": [
+      "gpt-5",
+      "gpt-5-2025-08-07",
+      "gpt-5-chat-latest",
+      "gpt-5-codex",
+      "gpt-5-mini",
+      "gpt-5-mini-2025-08-07",
+      "gpt-5-nano",
+      "gpt-5-nano-2025-08-07",
+      "gpt-5-pro",
+      "gpt-5-pro-2025-10-06",
+      "gpt-5-search-api",
+      "gpt-5-search-api-2025-10-14",
+      "gpt-5.1",
+      "gpt-5.1-2025-11-13",
+      "gpt-5.1-chat-latest",
+      "gpt-5.1-codex",
+      "gpt-5.1-codex-max",
+      "gpt-5.1-codex-mini",
+      "gpt-5.2",
+      "gpt-5.2-2025-12-11",
+      "gpt-5.2-chat-latest",
+      "gpt-5.2-codex",
+      "gpt-5.2-pro",
+      "gpt-5.2-pro-2025-12-11",
+      "gpt-5.3-chat-latest",
+      "gpt-5.3-codex",
+      "gpt-5.4",
+      "gpt-5.4-2026-03-05",
+      "gpt-5.4-mini",
+      "gpt-5.4-mini-2026-03-17",
+      "gpt-5.4-nano",
+      "gpt-5.4-nano-2026-03-17",
+      "gpt-5.4-pro",
+      "gpt-5.4-pro-2026-03-05",
+      "gpt-5.5",
+      "gpt-5.5-2026-04-23",
+      "gpt-5.5-pro",
+      "gpt-5.5-pro-2026-04-23"
+    ]
+  }
+}

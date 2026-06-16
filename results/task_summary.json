@@ -1,0 +1,218 @@
+[
+  {
+    "task_id": "fixed_load-2000-0",
+    "family": "fixed_load",
+    "target_tokens": 2000,
+    "actual_document_tokens": 1928,
+    "fact_count": 10,
+    "replicate": 0,
+    "source_count": 2
+  },
+  {
+    "task_id": "fixed_load-2000-1",
+    "family": "fixed_load",
+    "target_tokens": 2000,
+    "actual_document_tokens": 1932,
+    "fact_count": 10,
+    "replicate": 1,
+    "source_count": 2
+  },
+  {
+    "task_id": "fixed_load-2000-2",
+    "family": "fixed_load",
+    "target_tokens": 2000,
+    "actual_document_tokens": 1929,
+    "fact_count": 10,
+    "replicate": 2,
+    "source_count": 2
+  },
+  {
+    "task_id": "fixed_load-6000-0",
+    "family": "fixed_load",
+    "target_tokens": 6000,
+    "actual_document_tokens": 5928,
+    "fact_count": 10,
+    "replicate": 0,
+    "source_count": 4
+  },
+  {
+    "task_id": "fixed_load-6000-1",
+    "family": "fixed_load",
+    "target_tokens": 6000,
+    "actual_document_tokens": 5928,
+    "fact_count": 10,
+    "replicate": 1,
+    "source_count": 4
+  },
+  {
+    "task_id": "fixed_load-6000-2",
+    "family": "fixed_load",
+    "target_tokens": 6000,
+    "actual_document_tokens": 5924,
+    "fact_count": 10,
+    "replicate": 2,
+    "source_count": 5
+  },
+  {
+    "task_id": "fixed_load-12000-0",
+    "family": "fixed_load",
+    "target_tokens": 12000,
+    "actual_document_tokens": 11925,
+    "fact_count": 10,
+    "replicate": 0,
+    "source_count": 8
+  },
+  {
+    "task_id": "fixed_load-12000-1",
+    "family": "fixed_load",
+    "target_tokens": 12000,
+    "actual_document_tokens": 11925,
+    "fact_count": 10,
+    "replicate": 1,
+    "source_count": 7
+  },
+  {
+    "task_id": "fixed_load-12000-2",
+    "family": "fixed_load",
+    "target_tokens": 12000,
+    "actual_document_tokens": 11924,
+    "fact_count": 10,
+    "replicate": 2,
+    "source_count": 8
+  },
+  {
+    "task_id": "fixed_load-24000-0",
+    "family": "fixed_load",
+    "target_tokens": 24000,
+    "actual_document_tokens": 23917,
+    "fact_count": 10,
+    "replicate": 0,
+    "source_count": 15
+  },
+  {
+    "task_id": "fixed_load-24000-1",
+    "family": "fixed_load",
+    "target_tokens": 24000,
+    "actual_document_tokens": 23921,
+    "fact_count": 10,
+    "replicate": 1,
+    "source_count": 12
+  },
+  {
+    "task_id": "fixed_load-24000-2",
+    "family": "fixed_load",
+    "target_tokens": 24000,
+    "actual_document_tokens": 23921,
+    "fact_count": 10,
+    "replicate": 2,
+    "source_count": 14
+  },
+  {
+    "task_id": "scaled_load-2000-0",
+    "family": "scaled_load",
+    "target_tokens": 2000,
+    "actual_document_tokens": 1924,
+    "fact_count": 4,
+    "replicate": 0,
+    "source_count": 2
+  },
+  {
+    "task_id": "scaled_load-2000-1",
+    "family": "scaled_load",
+    "target_tokens": 2000,
+    "actual_document_tokens": 1924,
+    "fact_count": 4,
+    "replicate": 1,
+    "source_count": 2
+  },
+  {
+    "task_id": "scaled_load-2000-2",
+    "family": "scaled_load",
+    "target_tokens": 2000,
+    "actual_document_tokens": 1925,
+    "fact_count": 4,
+    "replicate": 2,
+    "source_count": 2
+  },
+  {
+    "task_id": "scaled_load-6000-0",
+    "family": "scaled_load",
+    "target_tokens": 6000,
+    "actual_document_tokens": 5923,
+    "fact_count": 8,
+    "replicate": 0,
+    "source_count": 5
+  },
+  {
+    "task_id": "scaled_load-6000-1",
+    "family": "scaled_load",
+    "target_tokens": 6000,
+    "actual_document_tokens": 5932,
+    "fact_count": 8,
+    "replicate": 1,
+    "source_count": 4
+  },
+  {
+    "task_id": "scaled_load-6000-2",
+    "family": "scaled_load",
+    "target_tokens": 6000,
+    "actual_document_tokens": 5926,
+    "fact_count": 8,
+    "replicate": 2,
+    "source_count": 4
+  },
+  {
+    "task_id": "scaled_load-12000-0",
+    "family": "scaled_load",
+    "target_tokens": 12000,
+    "actual_document_tokens": 11931,
+    "fact_count": 16,
+    "replicate": 0,
+    "source_count": 6
+  },
+  {
+    "task_id": "scaled_load-12000-1",
+    "family": "scaled_load",
+    "target_tokens": 12000,
+    "actual_document_tokens": 11933,
+    "fact_count": 16,
+    "replicate": 1,
+    "source_count": 8
+  },
+  {
+    "task_id": "scaled_load-12000-2",
+    "family": "scaled_load",
+    "target_tokens": 12000,
+    "actual_document_tokens": 11931,
+    "fact_count": 16,
+    "replicate": 2,
+    "source_count": 8
+  },
+  {
+    "task_id": "scaled_load-24000-0",
+    "family": "scaled_load",
+    "target_tokens": 24000,
+    "actual_document_tokens": 23931,
+    "fact_count": 32,
+    "replicate": 0,
+    "source_count": 15
+  },
+  {
+    "task_id": "scaled_load-24000-1",
+    "family": "scaled_load",
+    "target_tokens": 24000,
+    "actual_document_tokens": 23943,
+    "fact_count": 32,
+    "replicate": 1,
+    "source_count": 13
+  },
+  {
+    "task_id": "scaled_load-24000-2",
+    "family": "scaled_load",
+    "target_tokens": 24000,
+    "actual_document_tokens": 23933,
+    "fact_count": 32,
+    "replicate": 2,
+    "source_count": 13
+  }
+]

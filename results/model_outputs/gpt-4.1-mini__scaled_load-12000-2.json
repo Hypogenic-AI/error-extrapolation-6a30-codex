@@ -1,0 +1,51 @@
+{
+  "task_id": "scaled_load-12000-2",
+  "model": "gpt-4.1-mini",
+  "created_utc": "2026-06-16T14:43:11.027907+00:00",
+  "elapsed_seconds": 29.905023336410522,
+  "actual_document_tokens": 11931,
+  "fact_count": 16,
+  "family": "scaled_load",
+  "target_tokens": 12000,
+  "response_content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-021-01\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"escalated\",\n      \"object\": \"license renewals\",\n      \"count\": 655,\n      \"month\": \"October 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-021-02\",\n      \"unit\": \"Granite Review Panel\",\n      \"action\": \"isolated\",\n      \"object\": \"training records\",\n      \"count\": 308,\n      \"month\": \"August 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-021-03\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"withheld\",\n      \"object\": \"sensor logs\",\n      \"count\": 880,\n      \"month\": \"November 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-021-04\",\n      \"unit\": \"Granite Review Panel\",\n      \"action\": \"delayed\",\n      \"object\": \"access badges\",\n      \"count\": 430,\n      \"month\": \"June 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-021-05\",\n      \"unit\": \"Granite Review Panel\",\n      \"action\": \"inspected\",\n      \"object\": \"inspection photos\",\n      \"count\": 104,\n      \"month\": \"June 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-021-06\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"recoded\",\n      \"object\": \"calibration files\",\n      \"count\": 390,\n      \"month\": \"March 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-021-07\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"quarantined\",\n      \"object\": \"sensor logs\",\n      \"count\": 102,\n      \"month\": \"July 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-021-08\",\n      \"unit\": \"Lumen Archives Unit\",\n      \"action\": \"withheld\",\n      \"object\": \"meeting transcripts\",\n      \"count\": 838,\n      \"month\": \"March 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-021-09\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"merged\",\n      \"object\": \"training records\",\n      \"count\": 344,\n      \"month\": \"November 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-021-10\",\n      \"unit\": \"Granite Review Panel\",\n      \"action\": \"archived\",\n      \"object\": \"inventory tags\",\n      \"count\": 970,\n      \"month\": \"July 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-021-11\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"isolated\",\n      \"object\": \"calibration files\",\n      \"count\": 367,\n      \"month\": \"February 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-021-12\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"recoded\",\n      \"object\": \"shipment manifests\",\n      \"count\": 236,\n      \"month\": \"February 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-021-13\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"archived\",\n      \"object\": \"sensor logs\",\n      \"count\": 787,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-021-14\",\n      \"unit\": \"Granite Review Panel\",\n      \"action\": \"merged\",\n      \"object\": \"license renewals\",\n      \"count\": 635,\n      \"month\": \"November 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-021-15\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"recoded\",\n      \"object\": \"inspection photos\",\n      \"count\": 280,\n      \"month\": \"January 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-021-16\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"withheld\",\n      \"object\": \"calibration files\",\n      \"count\": 950,\n      \"month\": \"June 2025\",\n      \"severity\": \"high\"\n    }\n  ]\n}",
+  "raw_response": {
+    "id": "chatcmpl-DrPHt4XJiXmpiNsuU6pl2t6fVdI75",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-021-01\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"escalated\",\n      \"object\": \"license renewals\",\n      \"count\": 655,\n      \"month\": \"October 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-021-02\",\n      \"unit\": \"Granite Review Panel\",\n      \"action\": \"isolated\",\n      \"object\": \"training records\",\n      \"count\": 308,\n      \"month\": \"August 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-021-03\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"withheld\",\n      \"object\": \"sensor logs\",\n      \"count\": 880,\n      \"month\": \"November 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-021-04\",\n      \"unit\": \"Granite Review Panel\",\n      \"action\": \"delayed\",\n      \"object\": \"access badges\",\n      \"count\": 430,\n      \"month\": \"June 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-021-05\",\n      \"unit\": \"Granite Review Panel\",\n      \"action\": \"inspected\",\n      \"object\": \"inspection photos\",\n      \"count\": 104,\n      \"month\": \"June 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-021-06\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"recoded\",\n      \"object\": \"calibration files\",\n      \"count\": 390,\n      \"month\": \"March 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-021-07\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"quarantined\",\n      \"object\": \"sensor logs\",\n      \"count\": 102,\n      \"month\": \"July 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-021-08\",\n      \"unit\": \"Lumen Archives Unit\",\n      \"action\": \"withheld\",\n      \"object\": \"meeting transcripts\",\n      \"count\": 838,\n      \"month\": \"March 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-021-09\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"merged\",\n      \"object\": \"training records\",\n      \"count\": 344,\n      \"month\": \"November 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-021-10\",\n      \"unit\": \"Granite Review Panel\",\n      \"action\": \"archived\",\n      \"object\": \"inventory tags\",\n      \"count\": 970,\n      \"month\": \"July 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-021-11\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"isolated\",\n      \"object\": \"calibration files\",\n      \"count\": 367,\n      \"month\": \"February 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-021-12\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"recoded\",\n      \"object\": \"shipment manifests\",\n      \"count\": 236,\n      \"month\": \"February 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-021-13\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"archived\",\n      \"object\": \"sensor logs\",\n      \"count\": 787,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-021-14\",\n      \"unit\": \"Granite Review Panel\",\n      \"action\": \"merged\",\n      \"object\": \"license renewals\",\n      \"count\": 635,\n      \"month\": \"November 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-021-15\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"recoded\",\n      \"object\": \"inspection photos\",\n      \"count\": 280,\n      \"month\": \"January 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-021-16\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"withheld\",\n      \"object\": \"calibration files\",\n      \"count\": 950,\n      \"month\": \"June 2025\",\n      \"severity\": \"high\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1781620961,
+    "model": "gpt-4.1-mini-2025-04-14",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": "fp_75121d4089",
+    "usage": {
+      "completion_tokens": 1070,
+      "prompt_tokens": 12145,
+      "total_tokens": 13215,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  }
+}

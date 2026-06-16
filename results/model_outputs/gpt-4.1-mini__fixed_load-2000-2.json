@@ -1,0 +1,51 @@
+{
+  "task_id": "fixed_load-2000-2",
+  "model": "gpt-4.1-mini",
+  "created_utc": "2026-06-16T14:39:23.392721+00:00",
+  "elapsed_seconds": 7.9178454875946045,
+  "actual_document_tokens": 1929,
+  "fact_count": 10,
+  "family": "fixed_load",
+  "target_tokens": 2000,
+  "response_content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-003-01\",\n      \"unit\": \"Delta Safety Board\",\n      \"action\": \"redirected\",\n      \"object\": \"512 training records\",\n      \"count\": 512,\n      \"month\": \"February 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-003-02\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"redirected\",\n      \"object\": \"170 inventory tags\",\n      \"count\": 170,\n      \"month\": \"November 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-003-03\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"quarantined\",\n      \"object\": \"397 expense waivers\",\n      \"count\": 397,\n      \"month\": \"October 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-003-04\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"escalated\",\n      \"object\": \"888 training records\",\n      \"count\": 888,\n      \"month\": \"January 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-003-05\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"merged\",\n      \"object\": \"794 calibration files\",\n      \"count\": 794,\n      \"month\": \"November 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-003-06\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"escalated\",\n      \"object\": \"168 expense waivers\",\n      \"count\": 168,\n      \"month\": \"August 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-003-07\",\n      \"unit\": \"Lumen Archives Unit\",\n      \"action\": \"withheld\",\n      \"object\": \"519 calibration files\",\n      \"count\": 519,\n      \"month\": \"March 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-003-08\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"escalated\",\n      \"object\": \"526 inventory tags\",\n      \"count\": 526,\n      \"month\": \"October 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-003-09\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"archived\",\n      \"object\": \"559 safety forms\",\n      \"count\": 559,\n      \"month\": \"September 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-003-10\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"archived\",\n      \"object\": \"26 shipment manifests\",\n      \"count\": 26,\n      \"month\": \"February 2025\",\n      \"severity\": \"high\"\n    }\n  ]\n}",
+  "raw_response": {
+    "id": "chatcmpl-DrPEZLNdyGagbslcCibCOAO4M9dsL",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-003-01\",\n      \"unit\": \"Delta Safety Board\",\n      \"action\": \"redirected\",\n      \"object\": \"512 training records\",\n      \"count\": 512,\n      \"month\": \"February 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-003-02\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"redirected\",\n      \"object\": \"170 inventory tags\",\n      \"count\": 170,\n      \"month\": \"November 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-003-03\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"quarantined\",\n      \"object\": \"397 expense waivers\",\n      \"count\": 397,\n      \"month\": \"October 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-003-04\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"escalated\",\n      \"object\": \"888 training records\",\n      \"count\": 888,\n      \"month\": \"January 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-003-05\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"merged\",\n      \"object\": \"794 calibration files\",\n      \"count\": 794,\n      \"month\": \"November 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-003-06\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"escalated\",\n      \"object\": \"168 expense waivers\",\n      \"count\": 168,\n      \"month\": \"August 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-003-07\",\n      \"unit\": \"Lumen Archives Unit\",\n      \"action\": \"withheld\",\n      \"object\": \"519 calibration files\",\n      \"count\": 519,\n      \"month\": \"March 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-003-08\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"escalated\",\n      \"object\": \"526 inventory tags\",\n      \"count\": 526,\n      \"month\": \"October 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-003-09\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"archived\",\n      \"object\": \"559 safety forms\",\n      \"count\": 559,\n      \"month\": \"September 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-003-10\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"archived\",\n      \"object\": \"26 shipment manifests\",\n      \"count\": 26,\n      \"month\": \"February 2025\",\n      \"severity\": \"high\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1781620755,
+    "model": "gpt-4.1-mini-2025-04-14",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": "fp_75121d4089",
+    "usage": {
+      "completion_tokens": 682,
+      "prompt_tokens": 2143,
+      "total_tokens": 2825,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "task_id": "scaled_load-24000-0",
+  "model": "gpt-5-mini",
+  "created_utc": "2026-06-16T15:00:09.654438+00:00",
+  "elapsed_seconds": 88.49887657165527,
+  "actual_document_tokens": 23931,
+  "fact_count": 32,
+  "family": "scaled_load",
+  "target_tokens": 24000,
+  "response_content": "",
+  "raw_response": {
+    "id": "chatcmpl-DrPXNJXrYZN2k5zPyZtN9BnyP7K1X",
+    "choices": [
+      {
+        "finish_reason": "length",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1781621921,
+    "model": "gpt-5-mini-2025-08-07",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 5000,
+      "prompt_tokens": 24144,
+      "total_tokens": 29144,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 5000,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  }
+}

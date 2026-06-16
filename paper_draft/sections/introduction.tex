@@ -1,0 +1,23 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Long-context language models are now used to summarize evidence that people cannot realistically read end to end: regulatory reports, meeting archives, legal records, and operational logs. In these settings, a single summary score is not enough. A system that almost never invents facts can still be unsafe if it omits low-salience incidents, changes counts, or fails to emit a usable output when the source is long.
+
+\para{What should fail as context grows?}
+Our main question is simple: as source documents become longer, which summarization errors remain stable and which errors increase? Prior long-document work gives strong evidence that factuality and coherence need fine-grained evaluation \cite{chang2023booookscore,bishop2024longdocfactscore}. Factuality benchmarks also show that entity, predicate, circumstance, and out-of-source errors behave differently \cite{pagnoni2021frank,tang2023aggrefact}. However, these settings often mix source length, summary length, salience, and annotation difficulty. We focus on direct error scaling under controlled ground truth.
+
+\para{Our approach.}
+We build controlled long-document tasks by inserting known compliance-incident records into natural \qmsum and \govreport background documents \cite{zhong2021qmsum,huang2021govreport}. Each injected record has a record id, unit, action, object, count, month, and severity. We then ask two real hosted models, \gptfourmini and \gptfivemini, to extract all incident records as strict JSON. The design has two task families: \fixedload holds the target fact count fixed at 10 while source length grows, and \scaledload increases both source length and target fact count.
+
+\para{Preview.}
+The main result is negative but operationally useful. Across 48 main model calls, 600 target records, and 536 predicted records, hallucinations and duplicates are 0. Normalized unit, object, count, month, and severity errors are also 0, and only 2 action-field errors occur. The only strong length-dependent failure is not a gradual rise in factual substitutions. It is an abrupt visible-output failure: \gptfivemini returns empty content in two 24k-token, 32-fact runs because the full 5,000-token completion budget is consumed as reasoning tokens. A high-budget recovery rerun with 12,000 completion tokens fixes both cases with zero omissions and zero field errors.
+
+We make three contributions:
+\begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+    \item We propose a controlled long-context summarization design that preserves natural distractor text while giving exact record-level ground truth.
+    \item We conduct a compact factorial experiment over two models, two task families, four source-length bins, and three replicates per condition.
+    \item We show that factual error categories are nearly stable in valid outputs, while the apparent length effect comes from a completion-budget failure at the hardest scaled-load condition.
+    \item We complement prior factuality benchmarks with a sensitivity analysis that separates parse failures from factual omissions.
+\end{itemize}
+
+\Secref{sec:related} reviews long-document summarization and factuality evaluation. \Secref{sec:method} describes the controlled task design and metrics. \Secref{sec:results} presents the main results, recovery check, and statistical tests. \Secref{sec:discussion} discusses implications and limitations.

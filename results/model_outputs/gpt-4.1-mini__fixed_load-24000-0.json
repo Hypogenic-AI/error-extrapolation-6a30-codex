@@ -1,0 +1,51 @@
+{
+  "task_id": "fixed_load-24000-0",
+  "model": "gpt-4.1-mini",
+  "created_utc": "2026-06-16T14:40:24.968857+00:00",
+  "elapsed_seconds": 8.317767143249512,
+  "actual_document_tokens": 23917,
+  "fact_count": 10,
+  "family": "fixed_load",
+  "target_tokens": 24000,
+  "response_content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-010-01\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"withheld\",\n      \"object\": \"884 supplier invoices\",\n      \"count\": 884,\n      \"month\": \"October 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-010-02\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"reconciled\",\n      \"object\": \"312 meeting transcripts\",\n      \"count\": 312,\n      \"month\": \"July 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-010-03\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"withheld\",\n      \"object\": \"566 inspection photos\",\n      \"count\": 566,\n      \"month\": \"October 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-010-04\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"validated\",\n      \"object\": \"453 calibration files\",\n      \"count\": 453,\n      \"month\": \"August 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-010-05\",\n      \"unit\": \"Granite Review Panel\",\n      \"action\": \"archived\",\n      \"object\": \"702 inventory tags\",\n      \"count\": 702,\n      \"month\": \"July 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-010-06\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"redirected\",\n      \"object\": \"553 license renewals\",\n      \"count\": 553,\n      \"month\": \"January 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-010-07\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"isolated\",\n      \"object\": \"34 inventory tags\",\n      \"count\": 34,\n      \"month\": \"February 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-010-08\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"delayed\",\n      \"object\": \"58 safety forms\",\n      \"count\": 58,\n      \"month\": \"May 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-010-09\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"validated\",\n      \"object\": \"341 shipment manifests\",\n      \"count\": 341,\n      \"month\": \"June 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-010-10\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"inspected\",\n      \"object\": \"861 calibration files\",\n      \"count\": 861,\n      \"month\": \"February 2025\",\n      \"severity\": \"critical\"\n    }\n  ]\n}",
+  "raw_response": {
+    "id": "chatcmpl-DrPFZNRckKLMt3MYP4e40aHD9upJP",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-010-01\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"withheld\",\n      \"object\": \"884 supplier invoices\",\n      \"count\": 884,\n      \"month\": \"October 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-010-02\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"reconciled\",\n      \"object\": \"312 meeting transcripts\",\n      \"count\": 312,\n      \"month\": \"July 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-010-03\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"withheld\",\n      \"object\": \"566 inspection photos\",\n      \"count\": 566,\n      \"month\": \"October 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-010-04\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"validated\",\n      \"object\": \"453 calibration files\",\n      \"count\": 453,\n      \"month\": \"August 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-010-05\",\n      \"unit\": \"Granite Review Panel\",\n      \"action\": \"archived\",\n      \"object\": \"702 inventory tags\",\n      \"count\": 702,\n      \"month\": \"July 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-010-06\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"redirected\",\n      \"object\": \"553 license renewals\",\n      \"count\": 553,\n      \"month\": \"January 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-010-07\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"isolated\",\n      \"object\": \"34 inventory tags\",\n      \"count\": 34,\n      \"month\": \"February 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-010-08\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"delayed\",\n      \"object\": \"58 safety forms\",\n      \"count\": 58,\n      \"month\": \"May 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-010-09\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"validated\",\n      \"object\": \"341 shipment manifests\",\n      \"count\": 341,\n      \"month\": \"June 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-010-10\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"inspected\",\n      \"object\": \"861 calibration files\",\n      \"count\": 861,\n      \"month\": \"February 2025\",\n      \"severity\": \"critical\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1781620817,
+    "model": "gpt-4.1-mini-2025-04-14",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": "fp_75121d4089",
+    "usage": {
+      "completion_tokens": 680,
+      "prompt_tokens": 24131,
+      "total_tokens": 24811,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  }
+}

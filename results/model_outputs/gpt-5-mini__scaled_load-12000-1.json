@@ -1,0 +1,51 @@
+{
+  "task_id": "scaled_load-12000-1",
+  "model": "gpt-5-mini",
+  "created_utc": "2026-06-16T14:57:48.172017+00:00",
+  "elapsed_seconds": 55.75498843193054,
+  "actual_document_tokens": 11933,
+  "fact_count": 16,
+  "family": "scaled_load",
+  "target_tokens": 12000,
+  "response_content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-020-01\",\n      \"unit\": \"Aurora Records Office\",\n      \"action\": \"escalated\",\n      \"object\": \"shipment manifests\",\n      \"count\": 125,\n      \"month\": \"February 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-020-02\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"redirected\",\n      \"object\": \"expense waivers\",\n      \"count\": 471,\n      \"month\": \"June 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-020-03\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"withheld\",\n      \"object\": \"inspection photos\",\n      \"count\": 165,\n      \"month\": \"July 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-020-04\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"isolated\",\n      \"object\": \"expense waivers\",\n      \"count\": 968,\n      \"month\": \"May 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-020-05\",\n      \"unit\": \"Lumen Archives Unit\",\n      \"action\": \"archived\",\n      \"object\": \"access badges\",\n      \"count\": 461,\n      \"month\": \"August 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-020-06\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"quarantined\",\n      \"object\": \"inventory tags\",\n      \"count\": 383,\n      \"month\": \"September 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-020-07\",\n      \"unit\": \"Aurora Records Office\",\n      \"action\": \"inspected\",\n      \"object\": \"calibration files\",\n      \"count\": 201,\n      \"month\": \"February 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-020-08\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"recoded\",\n      \"object\": \"access badges\",\n      \"count\": 664,\n      \"month\": \"November 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-020-09\",\n      \"unit\": \"Aurora Records Office\",\n      \"action\": \"archived\",\n      \"object\": \"access badges\",\n      \"count\": 135,\n      \"month\": \"October 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-020-10\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"merged\",\n      \"object\": \"access badges\",\n      \"count\": 607,\n      \"month\": \"April 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-020-11\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"redirected\",\n      \"object\": \"license renewals\",\n      \"count\": 9,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-020-12\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"merged\",\n      \"object\": \"calibration files\",\n      \"count\": 824,\n      \"month\": \"March 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-020-13\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"reconciled\",\n      \"object\": \"safety forms\",\n      \"count\": 22,\n      \"month\": \"June 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-020-14\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"archived\",\n      \"object\": \"supplier invoices\",\n      \"count\": 185,\n      \"month\": \"May 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-020-15\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"withheld\",\n      \"object\": \"expense waivers\",\n      \"count\": 545,\n      \"month\": \"February 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-020-16\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"delayed\",\n      \"object\": \"meeting transcripts\",\n      \"count\": 532,\n      \"month\": \"October 2025\",\n      \"severity\": \"low\"\n    }\n  ]\n}",
+  "raw_response": {
+    "id": "chatcmpl-DrPVcuQOEhXeBcyQCZu3Z2Ai7rxGV",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-020-01\",\n      \"unit\": \"Aurora Records Office\",\n      \"action\": \"escalated\",\n      \"object\": \"shipment manifests\",\n      \"count\": 125,\n      \"month\": \"February 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-020-02\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"redirected\",\n      \"object\": \"expense waivers\",\n      \"count\": 471,\n      \"month\": \"June 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-020-03\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"withheld\",\n      \"object\": \"inspection photos\",\n      \"count\": 165,\n      \"month\": \"July 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-020-04\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"isolated\",\n      \"object\": \"expense waivers\",\n      \"count\": 968,\n      \"month\": \"May 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-020-05\",\n      \"unit\": \"Lumen Archives Unit\",\n      \"action\": \"archived\",\n      \"object\": \"access badges\",\n      \"count\": 461,\n      \"month\": \"August 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-020-06\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"quarantined\",\n      \"object\": \"inventory tags\",\n      \"count\": 383,\n      \"month\": \"September 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-020-07\",\n      \"unit\": \"Aurora Records Office\",\n      \"action\": \"inspected\",\n      \"object\": \"calibration files\",\n      \"count\": 201,\n      \"month\": \"February 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-020-08\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"recoded\",\n      \"object\": \"access badges\",\n      \"count\": 664,\n      \"month\": \"November 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-020-09\",\n      \"unit\": \"Aurora Records Office\",\n      \"action\": \"archived\",\n      \"object\": \"access badges\",\n      \"count\": 135,\n      \"month\": \"October 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-020-10\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"merged\",\n      \"object\": \"access badges\",\n      \"count\": 607,\n      \"month\": \"April 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-020-11\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"redirected\",\n      \"object\": \"license renewals\",\n      \"count\": 9,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-020-12\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"merged\",\n      \"object\": \"calibration files\",\n      \"count\": 824,\n      \"month\": \"March 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-020-13\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"reconciled\",\n      \"object\": \"safety forms\",\n      \"count\": 22,\n      \"month\": \"June 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-020-14\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"archived\",\n      \"object\": \"supplier invoices\",\n      \"count\": 185,\n      \"month\": \"May 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-020-15\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"withheld\",\n      \"object\": \"expense waivers\",\n      \"count\": 545,\n      \"month\": \"February 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-020-16\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"delayed\",\n      \"object\": \"meeting transcripts\",\n      \"count\": 532,\n      \"month\": \"October 2025\",\n      \"severity\": \"low\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1781621812,
+    "model": "gpt-5-mini-2025-08-07",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 3966,
+      "prompt_tokens": 12146,
+      "total_tokens": 16112,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 2880,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  }
+}

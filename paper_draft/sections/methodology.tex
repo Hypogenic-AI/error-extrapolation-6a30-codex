@@ -1,0 +1,19 @@
+\section{Methodology}
+\label{sec:method}
+
+\para{Task formulation.}
+Each task document contains natural background text plus a set $T$ of injected incident records. Each target record $t \in T$ has seven fields: record id, unit, action, object, count, month, and severity. A model returns a JSON object containing a predicted set $P$ of records with the same schema. The scorer matches predictions to targets by record id, then evaluates omissions, hallucinated ids, duplicate ids, field mismatches, and exact-record recovery.
+
+\para{Datasets and task families.}
+We use pre-downloaded \qmsum and \govreport test-split text as natural background. The injected incidents are synthetic compliance notes, which gives exact ground truth while preserving long natural distractor context. \Tabref{tab:design} summarizes the two task families. \fixedload isolates context dilution by keeping 10 target records at every length. \scaledload tests a more realistic workload in which longer documents also contain more target facts.
+
+\input{tables/experimental_design}
+
+\para{Models and decoding.}
+We query \gptfourmini and \gptfivemini through the OpenAI API after verifying that both models are available to the authenticated account. The main run uses JSON-mode chat completions with a 5,000 completion-token cap. We use deterministic decoding where supported by the model endpoint. After observing two high-load \gptfivemini failures, we run a recovery check on those exact tasks with \texttt{max\_completion\_tokens=12000}.
+
+\para{Metrics.}
+Omission rate is the fraction of target ids missing from the returned JSON. Hallucination rate is the fraction of predicted ids not present in the source. Duplicate rate is the fraction of repeated predicted ids. Field-error rate is measured among matched records and checks unit, action, object, count, month, and severity. Exact-record rate is the fraction of target records whose id is returned and whose fields all match. We also record parse failure when the model output is empty or invalid JSON. The scorer normalizes harmless packaging differences, such as placing the count inside the object phrase when the separate count field is correct.
+
+\para{Baselines and statistical analysis.}
+We use three sanity baselines. A perfect extractor has zero errors by construction and verifies the scoring logic. A prompt-format baseline records parse failures and duplicate ids, separating structural failures from factual errors. A cross-model comparison checks whether slopes are model-specific. For statistical tests, we fit binomial logistic models for each error indicator against $\log_2$ source tokens, adding model, task-family, or fact-count controls where possible. We report odds ratios per doubling of source length and Benjamini-Hochberg adjusted $p$-values.

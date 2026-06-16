@@ -1,0 +1,51 @@
+{
+  "task_id": "scaled_load-6000-0",
+  "model": "gpt-5-mini",
+  "created_utc": "2026-06-16T14:54:53.008529+00:00",
+  "elapsed_seconds": 37.63878297805786,
+  "actual_document_tokens": 5923,
+  "fact_count": 8,
+  "family": "scaled_load",
+  "target_tokens": 6000,
+  "response_content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-016-01\",\n      \"unit\": \"the Falcon Procurement Team\",\n      \"action\": \"isolated\",\n      \"object\": \"shipment manifests\",\n      \"count\": 647,\n      \"month\": \"August 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-016-02\",\n      \"unit\": \"The Delta Safety Board\",\n      \"action\": \"escalated\",\n      \"object\": \"training records\",\n      \"count\": 141,\n      \"month\": \"May 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-016-03\",\n      \"unit\": \"the Lumen Archives Unit\",\n      \"action\": \"delayed\",\n      \"object\": \"sensor logs\",\n      \"count\": 36,\n      \"month\": \"November 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-016-04\",\n      \"unit\": \"the Lumen Archives Unit\",\n      \"action\": \"redirected\",\n      \"object\": \"calibration files\",\n      \"count\": 571,\n      \"month\": \"January 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-016-05\",\n      \"unit\": \"the Beacon Finance Desk\",\n      \"action\": \"validated\",\n      \"object\": \"sensor logs\",\n      \"count\": 479,\n      \"month\": \"February 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-016-06\",\n      \"unit\": \"The Harbor Systems Group\",\n      \"action\": \"withheld\",\n      \"object\": \"calibration files\",\n      \"count\": 528,\n      \"month\": \"December 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-016-07\",\n      \"unit\": \"the Granite Review Panel\",\n      \"action\": \"delayed\",\n      \"object\": \"shipment manifests\",\n      \"count\": 256,\n      \"month\": \"August 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-016-08\",\n      \"unit\": \"the Granite Review Panel\",\n      \"action\": \"validated\",\n      \"object\": \"license renewals\",\n      \"count\": 527,\n      \"month\": \"December 2025\",\n      \"severity\": \"moderate\"\n    }\n  ]\n}",
+  "raw_response": {
+    "id": "chatcmpl-DrPT9EwJRgjvmcOQzEp7T3gZK1UbN",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-016-01\",\n      \"unit\": \"the Falcon Procurement Team\",\n      \"action\": \"isolated\",\n      \"object\": \"shipment manifests\",\n      \"count\": 647,\n      \"month\": \"August 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-016-02\",\n      \"unit\": \"The Delta Safety Board\",\n      \"action\": \"escalated\",\n      \"object\": \"training records\",\n      \"count\": 141,\n      \"month\": \"May 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-016-03\",\n      \"unit\": \"the Lumen Archives Unit\",\n      \"action\": \"delayed\",\n      \"object\": \"sensor logs\",\n      \"count\": 36,\n      \"month\": \"November 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-016-04\",\n      \"unit\": \"the Lumen Archives Unit\",\n      \"action\": \"redirected\",\n      \"object\": \"calibration files\",\n      \"count\": 571,\n      \"month\": \"January 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-016-05\",\n      \"unit\": \"the Beacon Finance Desk\",\n      \"action\": \"validated\",\n      \"object\": \"sensor logs\",\n      \"count\": 479,\n      \"month\": \"February 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-016-06\",\n      \"unit\": \"The Harbor Systems Group\",\n      \"action\": \"withheld\",\n      \"object\": \"calibration files\",\n      \"count\": 528,\n      \"month\": \"December 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-016-07\",\n      \"unit\": \"the Granite Review Panel\",\n      \"action\": \"delayed\",\n      \"object\": \"shipment manifests\",\n      \"count\": 256,\n      \"month\": \"August 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-016-08\",\n      \"unit\": \"the Granite Review Panel\",\n      \"action\": \"validated\",\n      \"object\": \"license renewals\",\n      \"count\": 527,\n      \"month\": \"December 2025\",\n      \"severity\": \"moderate\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1781621659,
+    "model": "gpt-5-mini-2025-08-07",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 2922,
+      "prompt_tokens": 6136,
+      "total_tokens": 9058,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 2368,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  }
+}

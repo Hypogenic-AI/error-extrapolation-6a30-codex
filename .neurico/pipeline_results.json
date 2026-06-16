@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "stages": {
+    "resource_finder": {
+      "success": true,
+      "completion_marker": "/workspaces/error-extrapolation-6a30-codex/.resource_finder_complete",
+      "outputs": {
+        "literature_review": "/workspaces/error-extrapolation-6a30-codex/literature_review.md",
+        "resources_catalog": "/workspaces/error-extrapolation-6a30-codex/resources.md",
+        "papers_dir": "/workspaces/error-extrapolation-6a30-codex/papers",
+        "datasets_dir": "/workspaces/error-extrapolation-6a30-codex/datasets",
+        "code_dir": "/workspaces/error-extrapolation-6a30-codex/code"
+      },
+      "log_file": "/workspaces/error-extrapolation-6a30-codex/logs/resource_finder_codex.log",
+      "transcript_file": "/workspaces/error-extrapolation-6a30-codex/logs/resource_finder_codex_transcript.jsonl",
+      "elapsed_time": 1053.273797750473
+    },
+    "experiment_runner": {
+      "success": true,
+      "return_code": 0,
+      "elapsed_time": 2575.7867307662964,
+      "log_file": "/workspaces/error-extrapolation-6a30-codex/logs/execution_codex.log",
+      "transcript_file": "/workspaces/error-extrapolation-6a30-codex/logs/execution_codex_transcript.jsonl"
+    }
+  },
+  "work_dir": "/workspaces/error-extrapolation-6a30-codex"
+}

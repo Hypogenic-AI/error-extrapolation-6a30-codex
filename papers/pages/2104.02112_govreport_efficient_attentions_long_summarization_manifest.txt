@@ -1,0 +1,11 @@
+PDF: papers/2104.02112_govreport_efficient_attentions_long_summarization.pdf
+Total pages: 18
+Pages per chunk: 3
+
+Chunks:
+  2104.02112_govreport_efficient_attentions_long_summarization_chunk_001.pdf: pages 1-3
+  2104.02112_govreport_efficient_attentions_long_summarization_chunk_002.pdf: pages 4-6
+  2104.02112_govreport_efficient_attentions_long_summarization_chunk_003.pdf: pages 7-9
+  2104.02112_govreport_efficient_attentions_long_summarization_chunk_004.pdf: pages 10-12
+  2104.02112_govreport_efficient_attentions_long_summarization_chunk_005.pdf: pages 13-15
+  2104.02112_govreport_efficient_attentions_long_summarization_chunk_006.pdf: pages 16-18

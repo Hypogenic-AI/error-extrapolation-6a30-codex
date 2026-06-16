@@ -1,0 +1,51 @@
+{
+  "task_id": "fixed_load-6000-2",
+  "model": "gpt-5-mini",
+  "created_utc": "2026-06-16T14:49:37.366412+00:00",
+  "elapsed_seconds": 35.781527280807495,
+  "actual_document_tokens": 5924,
+  "fact_count": 10,
+  "family": "fixed_load",
+  "target_tokens": 6000,
+  "response_content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-006-01\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"isolated\",\n      \"object\": \"access badges\",\n      \"count\": 599,\n      \"month\": \"October 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-006-02\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"quarantined\",\n      \"object\": \"expense waivers\",\n      \"count\": 680,\n      \"month\": \"October 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-006-03\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"validated\",\n      \"object\": \"inventory tags\",\n      \"count\": 740,\n      \"month\": \"June 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-006-04\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"inspected\",\n      \"object\": \"safety forms\",\n      \"count\": 694,\n      \"month\": \"November 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-006-05\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"archived\",\n      \"object\": \"sensor logs\",\n      \"count\": 16,\n      \"month\": \"August 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-006-06\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"merged\",\n      \"object\": \"access badges\",\n      \"count\": 525,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-006-07\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"quarantined\",\n      \"object\": \"access badges\",\n      \"count\": 385,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-006-08\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"merged\",\n      \"object\": \"inspection photos\",\n      \"count\": 316,\n      \"month\": \"October 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-006-09\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"merged\",\n      \"object\": \"calibration files\",\n      \"count\": 961,\n      \"month\": \"November 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-006-10\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"escalated\",\n      \"object\": \"sensor logs\",\n      \"count\": 918,\n      \"month\": \"February 2025\",\n      \"severity\": \"moderate\"\n    }\n  ]\n}",
+  "raw_response": {
+    "id": "chatcmpl-DrPO1DjAPNBbWFnhGlgPv6tJb3yAL",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-006-01\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"isolated\",\n      \"object\": \"access badges\",\n      \"count\": 599,\n      \"month\": \"October 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-006-02\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"quarantined\",\n      \"object\": \"expense waivers\",\n      \"count\": 680,\n      \"month\": \"October 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-006-03\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"validated\",\n      \"object\": \"inventory tags\",\n      \"count\": 740,\n      \"month\": \"June 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-006-04\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"inspected\",\n      \"object\": \"safety forms\",\n      \"count\": 694,\n      \"month\": \"November 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-006-05\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"archived\",\n      \"object\": \"sensor logs\",\n      \"count\": 16,\n      \"month\": \"August 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-006-06\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"merged\",\n      \"object\": \"access badges\",\n      \"count\": 525,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-006-07\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"quarantined\",\n      \"object\": \"access badges\",\n      \"count\": 385,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-006-08\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"merged\",\n      \"object\": \"inspection photos\",\n      \"count\": 316,\n      \"month\": \"October 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-006-09\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"merged\",\n      \"object\": \"calibration files\",\n      \"count\": 961,\n      \"month\": \"November 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-006-10\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"escalated\",\n      \"object\": \"sensor logs\",\n      \"count\": 918,\n      \"month\": \"February 2025\",\n      \"severity\": \"moderate\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1781621341,
+    "model": "gpt-5-mini-2025-08-07",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 2088,
+      "prompt_tokens": 6137,
+      "total_tokens": 8225,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 1408,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  }
+}

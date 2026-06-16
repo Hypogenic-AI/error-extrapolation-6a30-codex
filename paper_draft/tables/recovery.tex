@@ -1,0 +1,15 @@
+\begin{table}[t]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}lcccccc@{}}
+        \toprule
+        \textbf{Task} & \textbf{Target facts} & \textbf{Parse failure} & \textbf{Missing} & \textbf{Field errors} & \textbf{Reasoning tokens} & \textbf{Completion tokens} \\
+        \midrule
+        \texttt{scaled\_load-24000-0} & 32 & {\bf 0} & {\bf 0} & {\bf 0} & 2,752 & 4,900 \\
+        \texttt{scaled\_load-24000-1} & 32 & {\bf 0} & {\bf 0} & {\bf 0} & 2,560 & 4,706 \\
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{High-budget recovery for the two failed \gptfivemini scaled-load 24k runs. Increasing the completion cap from 5,000 to 12,000 tokens recovers every record with zero missing records and zero field errors. Best values are in \textbf{bold}.}
+    \label{tab:recovery}
+\end{table}

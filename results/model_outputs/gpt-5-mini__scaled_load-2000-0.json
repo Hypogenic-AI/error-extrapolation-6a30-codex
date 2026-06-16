@@ -1,0 +1,51 @@
+{
+  "task_id": "scaled_load-2000-0",
+  "model": "gpt-5-mini",
+  "created_utc": "2026-06-16T14:53:37.382758+00:00",
+  "elapsed_seconds": 16.114583253860474,
+  "actual_document_tokens": 1924,
+  "fact_count": 4,
+  "family": "scaled_load",
+  "target_tokens": 2000,
+  "response_content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-013-01\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"isolated\",\n      \"object\": \"inventory tags\",\n      \"count\": 830,\n      \"month\": \"April 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-013-02\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"merged\",\n      \"object\": \"access badges\",\n      \"count\": 670,\n      \"month\": \"March 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-013-03\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"quarantined\",\n      \"object\": \"supplier invoices\",\n      \"count\": 176,\n      \"month\": \"May 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-013-04\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"quarantined\",\n      \"object\": \"shipment manifests\",\n      \"count\": 712,\n      \"month\": \"May 2025\",\n      \"severity\": \"critical\"\n    }\n  ]\n}",
+  "raw_response": {
+    "id": "chatcmpl-DrPSD3CgZ0NTgS1lGzo700HZ6M46K",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-013-01\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"isolated\",\n      \"object\": \"inventory tags\",\n      \"count\": 830,\n      \"month\": \"April 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-013-02\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"merged\",\n      \"object\": \"access badges\",\n      \"count\": 670,\n      \"month\": \"March 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-013-03\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"quarantined\",\n      \"object\": \"supplier invoices\",\n      \"count\": 176,\n      \"month\": \"May 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-013-04\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"quarantined\",\n      \"object\": \"shipment manifests\",\n      \"count\": 712,\n      \"month\": \"May 2025\",\n      \"severity\": \"critical\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1781621601,
+    "model": "gpt-5-mini-2025-08-07",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 1178,
+      "prompt_tokens": 2137,
+      "total_tokens": 3315,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 896,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  }
+}

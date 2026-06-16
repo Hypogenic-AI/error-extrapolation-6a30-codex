@@ -1,0 +1,51 @@
+{
+  "task_id": "scaled_load-12000-0",
+  "model": "gpt-5-mini",
+  "created_utc": "2026-06-16T14:56:52.415877+00:00",
+  "elapsed_seconds": 52.538185358047485,
+  "actual_document_tokens": 11931,
+  "fact_count": 16,
+  "family": "scaled_load",
+  "target_tokens": 12000,
+  "response_content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-019-01\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"validated\",\n      \"object\": \"expense waivers\",\n      \"count\": 880,\n      \"month\": \"August 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-019-02\",\n      \"unit\": \"Delta Safety Board\",\n      \"action\": \"inspected\",\n      \"object\": \"license renewals\",\n      \"count\": 374,\n      \"month\": \"October 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-019-03\",\n      \"unit\": \"Lumen Archives Unit\",\n      \"action\": \"escalated\",\n      \"object\": \"supplier invoices\",\n      \"count\": 856,\n      \"month\": \"November 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-019-04\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"reconciled\",\n      \"object\": \"license renewals\",\n      \"count\": 892,\n      \"month\": \"November 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-019-05\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"withheld\",\n      \"object\": \"shipment manifests\",\n      \"count\": 859,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-019-06\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"archived\",\n      \"object\": \"access badges\",\n      \"count\": 658,\n      \"month\": \"April 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-019-07\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"withheld\",\n      \"object\": \"inventory tags\",\n      \"count\": 704,\n      \"month\": \"March 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-019-08\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"recoded\",\n      \"object\": \"supplier invoices\",\n      \"count\": 323,\n      \"month\": \"August 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-019-09\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"archived\",\n      \"object\": \"inspection photos\",\n      \"count\": 141,\n      \"month\": \"February 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-019-10\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"withheld\",\n      \"object\": \"expense waivers\",\n      \"count\": 186,\n      \"month\": \"April 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-019-11\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"archived\",\n      \"object\": \"training records\",\n      \"count\": 520,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-019-12\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"delayed\",\n      \"object\": \"calibration files\",\n      \"count\": 771,\n      \"month\": \"June 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-019-13\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"quarantined\",\n      \"object\": \"safety forms\",\n      \"count\": 779,\n      \"month\": \"April 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-019-14\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"archived\",\n      \"object\": \"sensor logs\",\n      \"count\": 816,\n      \"month\": \"July 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-019-15\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"merged\",\n      \"object\": \"sensor logs\",\n      \"count\": 472,\n      \"month\": \"June 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-019-16\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"inspected\",\n      \"object\": \"inventory tags\",\n      \"count\": 969,\n      \"month\": \"June 2025\",\n      \"severity\": \"low\"\n    }\n  ]\n}",
+  "raw_response": {
+    "id": "chatcmpl-DrPUmxsCArsqPrA1nYitbT5BtUqPT",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-019-01\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"validated\",\n      \"object\": \"expense waivers\",\n      \"count\": 880,\n      \"month\": \"August 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-019-02\",\n      \"unit\": \"Delta Safety Board\",\n      \"action\": \"inspected\",\n      \"object\": \"license renewals\",\n      \"count\": 374,\n      \"month\": \"October 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-019-03\",\n      \"unit\": \"Lumen Archives Unit\",\n      \"action\": \"escalated\",\n      \"object\": \"supplier invoices\",\n      \"count\": 856,\n      \"month\": \"November 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-019-04\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"reconciled\",\n      \"object\": \"license renewals\",\n      \"count\": 892,\n      \"month\": \"November 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-019-05\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"withheld\",\n      \"object\": \"shipment manifests\",\n      \"count\": 859,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-019-06\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"archived\",\n      \"object\": \"access badges\",\n      \"count\": 658,\n      \"month\": \"April 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-019-07\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"withheld\",\n      \"object\": \"inventory tags\",\n      \"count\": 704,\n      \"month\": \"March 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-019-08\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"recoded\",\n      \"object\": \"supplier invoices\",\n      \"count\": 323,\n      \"month\": \"August 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-019-09\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"archived\",\n      \"object\": \"inspection photos\",\n      \"count\": 141,\n      \"month\": \"February 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-019-10\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"withheld\",\n      \"object\": \"expense waivers\",\n      \"count\": 186,\n      \"month\": \"April 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-019-11\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"archived\",\n      \"object\": \"training records\",\n      \"count\": 520,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-019-12\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"delayed\",\n      \"object\": \"calibration files\",\n      \"count\": 771,\n      \"month\": \"June 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-019-13\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"quarantined\",\n      \"object\": \"safety forms\",\n      \"count\": 779,\n      \"month\": \"April 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-019-14\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"archived\",\n      \"object\": \"sensor logs\",\n      \"count\": 816,\n      \"month\": \"July 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-019-15\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"merged\",\n      \"object\": \"sensor logs\",\n      \"count\": 472,\n      \"month\": \"June 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-019-16\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"inspected\",\n      \"object\": \"inventory tags\",\n      \"count\": 969,\n      \"month\": \"June 2025\",\n      \"severity\": \"low\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1781621760,
+    "model": "gpt-5-mini-2025-08-07",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 2999,
+      "prompt_tokens": 12144,
+      "total_tokens": 15143,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 1920,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  }
+}

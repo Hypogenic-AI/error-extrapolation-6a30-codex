@@ -1,0 +1,14 @@
+\section{Related Work}
+\label{sec:related}
+
+\para{Long-document summarization.}
+Long-document summarization benchmarks expose models to inputs whose structure and evidence density differ from short news articles. \qmsum introduces query-focused meeting summarization over multi-domain meeting transcripts \cite{zhong2021qmsum}, while \govreport provides long government reports with expert summaries \cite{huang2021govreport}. These datasets motivate our choice of natural background text: we want realistic long-form distractors, but we also want exact ground truth for error typing.
+
+\para{Evaluation beyond aggregate scores.}
+BooookScore studies book-length summarization and identifies long-summary coherence errors such as omissions, discontinuities, salience errors, and duplication \cite{chang2023booookscore}. LongDocFACTScore adapts factuality scoring to long documents by retrieving evidence snippets before applying a factuality metric \cite{bishop2024longdocfactscore}. These works show that length creates evaluation challenges, but their main targets are summary quality and factual support. Our experiment instead holds the target facts under experimental control and estimates how specific error indicators change with length.
+
+\para{Factuality taxonomies and detectors.}
+FRANK provides a fine-grained factuality taxonomy for abstractive summarization, including entity, predicate, circumstance, discourse, and out-of-source errors \cite{pagnoni2021frank}. FactCC, SummaC, and MiniCheck develop automatic consistency or fact-checking models for source-grounded generation \cite{kryscinski2020factcc,laban2022summac,tang2024minicheck}. AggreFact shows that metric behavior varies across summarizer generations, datasets, and error types \cite{tang2023aggrefact}. Recent stress tests further show that factuality metrics can be sensitive to perturbations in long-document settings \cite{mujahid2025stress}. We take a complementary route: instead of scoring free-form claims with a learned metric, we ask models to recover known structured records and score field-level mismatches directly.
+
+\para{Positioning.}
+Our work is closest in motivation to studies that ask whether long-context summarization errors change qualitatively with length. The key difference is control. By injecting known facts into natural documents, we can distinguish omissions, hallucinated ids, duplicate ids, and field substitutions without human annotation. This makes the experiment small but diagnostic: it tests whether error categories slope upward under two controlled workloads, not whether a generated prose summary is globally good.

@@ -1,0 +1,661 @@
+You are an academic paper writer. Generate a complete NEURIPS style paper
+based on the experiment results provided.
+
+════════════════════════════════════════════════════════════════════════════════
+                         IMPORTANT: BEFORE YOU START
+════════════════════════════════════════════════════════════════════════════════
+
+Before writing any content, you MUST complete these steps:
+
+1. READ THE SKILL: Review the paper-writer skill at .codex/skills/paper-writer/SKILL.md
+2. READ THE STYLE GUIDE: Study templates/paper_writing/lab_style_guide.md carefully
+3. REVIEW EXAMPLES: Browse paper_examples/ for formatting and language patterns:
+   - Look at sections/1.introduction.tex for language style
+   - Look at tables/*.tex for table formatting
+   - Look at commands/*.tex for macro usage
+4. VERIFY COMMAND TEMPLATES: Command templates (math.tex, general.tex, macros.tex) are pre-copied to paper_draft/commands/
+
+CRITICAL: Reference example papers for FORMATTING and LANGUAGE STYLE only.
+Do NOT copy content, phrasing, or narrative structure from the example papers.
+The examples are in a different research domain - focus only on presentation style.
+
+════════════════════════════════════════════════════════════════════════════════
+                            EXPERIMENT REPORT
+════════════════════════════════════════════════════════════════════════════════
+
+# Error Extrapolation Report
+
+## 1. Executive Summary
+
+This study tested how error types change when real LLMs summarize specific facts from increasingly long documents. I generated controlled long-document tasks using QMSum and GovReport text as natural background, injected known compliance-incident facts as ground truth, and ran `gpt-4.1-mini` and `gpt-5-mini` on 48 long-context summarization calls spanning roughly 2k, 6k, 12k, and 24k source tokens.
+
+The main result is that ordinary factual errors were nearly stable over length: hallucinations and duplicates were 0 in all main runs, entity/count/month/severity/object errors were 0 after normalization, and only 2 action-field errors appeared across 536 matched predicted records. The only strong length-dependent failure was a `gpt-5-mini` visible-output failure at the hardest condition: 24k-token documents with 32 target facts under a 5,000 completion-token cap.
+
+The practical implication is that, in this controlled setting, long-context summarization did not degrade smoothly through accumulating factual substitutions. It failed abruptly when the task crossed an output/reasoning-budget threshold. A recovery check with a 12,000-token completion budget fixed both failed `gpt-5-mini` cases with zero omissions or field errors.
+
+## 2. Research Question & Motivation
+
+The motivating question was: as document length increases, which LLM summarization errors remain stable and which grow, especially in regimes where humans cannot realistically ingest the full input?
+
+Prior long-document summarization work, including BooookScore, LongDocFACTScore, FRANK, AggreFact, SummaC, and MiniCheck, shows that long-context factuality and coherence must be evaluated by error type rather than by a single summary score. The gap addressed here is direct length scaling: measuring per-error slopes while controlling the ground truth.
+
+## 3. Experimental Setup
+
+**Datasets.** I used the pre-downloaded QMSum Cleaned and GovReport test splits as natural background text. Synthetic compliance incident facts were injected into these documents to provide exact ground truth while preserving long natural distractor context.
+
+**Tasks.** There were two task families:
+
+| Family | Length bins | Target facts | Purpose |
+|---|---:|---:|---|
+| `fixed_load` | 2k, 6k, 12k, 24k tokens | 10 at every length | Isolate context dilution. |
+| `scaled_load` | 2k, 6k, 12k, 24k tokens | 4, 8, 16, 32 | Test workload growth with length. |
+
+Each condition had 3 replicates. With 2 models, the main experiment produced 48 model calls, 600 target records, and 536 predicted records.
+
+**Models and API.** Models were queried through OpenAI's first-party API after confirming the authenticated model list contained `gpt-4.1-mini` and `gpt-5-mini`. The main run used JSON-mode chat completions with a 5,000 completion-token cap. A recovery check reran the two failed `gpt-5-mini` high-load cases with a 12,000-token cap.
+
+**Metrics.** The scorer compared returned JSON records against known facts:
+
+| Metric | Definition |
+|---|---|
+| Omission rate | Missing target record IDs / target records. |
+| Hallucination rate | Predicted record IDs not present in source / predicted records. |
+| Duplicate rate | Repeated predicted record IDs / predicted records. |
+| Field errors | Unit, action, object, count, month, or severity mismatch among matched records. |
+| Exact record rate | Target records with matching ID and all fields correct. |
+| Parse failure | Empty or invalid JSON output. |
+
+Normalization ignored harmless packaging differences such as putting the count into the object phrase (`239 calibration files`) when the separate count field was correct.
+
+**Compute and environment.** The workspace used Python 3.12.8 with `openai 2.41.1`, `pandas 3.0.3`, `numpy 2.4.6`, `scipy 1.17.1`, `statsmodels 0.14.6`, `matplotlib 3.11.0`, `seaborn 0.13.2`, and `tiktoken 0.13.0`. Four NVIDIA RTX A6000 GPUs were available, each with 49,140 MiB memory, but the experiment used hosted APIs rather than local GPU inference. Total main-run usage was 534,762 prompt tokens, 85,059 completion tokens, and 1,465 seconds wall-clock API time.
+
+## 4. Results
+
+![Error rates by source length](figures/error_rates_by_length.png)
+
+![Length slope heatmap](figures/length_slope_heatmap.png)
+
+### Overall Main-Run Results
+
+| Quantity | Value |
+|---|---:|
+| Runs | 48 |
+| Target records | 600 |
+| Predicted records | 536 |
+| Parse failures | 2 |
+| Mean omission rate | 4.17% |
+| Mean hallucination rate | 0.00% |
+| Mean duplicate rate | 0.00% |
+| Mean field error rate among matched records | 0.43% |
+| Mean exact record rate over target records | 95.42% |
+
+The two parse failures were both `gpt-5-mini` on `scaled_load-24000` with 32 target facts. Both responses had `finish_reason="length"`, used all 5,000 completion tokens, and returned empty visible content because those tokens were consumed as reasoning tokens.
+
+### Error Rates by Key Condition
+
+| Model | Family | 24k-token condition | Omission | Hallucination | Duplicate | Exact record |
+|---|---|---:|---:|---:|---:|---:|
+| `gpt-4.1-mini` | fixed load | 10 facts | 0.0% | 0.0% | 0.0% | 100.0% |
+| `gpt-4.1-mini` | scaled load | 32 facts | 0.0% | 0.0% | 0.0% | 100.0% |
+| `gpt-5-mini` | fixed load | 10 facts | 0.0% | 0.0% | 0.0% | 100.0% |
+| `gpt-5-mini` | scaled load | 32 facts | 66.7% | 0.0% | 0.0% | 33.3% |
+
+Excluding parse failures, the mean omission rate was 0.0%, hallucination and duplicate rates remained 0.0%, and exact record rate rose to 99.57%. This means the observed main-run omission growth came entirely from empty visible outputs in two high-load runs, not from partial missed facts in otherwise valid summaries.
+
+### High-Budget Recovery Check
+
+The two failed `gpt-5-mini` `scaled_load-24000` cases were rerun with `max_completion_tokens=12000`.
+
+| Task | Target facts | Parse failure | Missing | Hallucinated | Field errors | Reasoning tokens | Completion tokens |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| `scaled_load-24000-0` | 32 | 0 | 0 | 0 | 0 | 2,752 | 4,900 |
+| `scaled_load-24000-1` | 32 | 0 | 0 | 0 | 0 | 2,560 | 4,706 |
+
+Both recovered completely. This converts the strongest apparent length effect into a configuration-sensitive failure mode: at high context plus high fact load, a reasoning model can spend the visible-output budget before emitting JSON.
+
+### Statistical Tests
+
+I fit binomial logistic models for each error indicator against log2(source tokens), with model/family controls where possible, and Benjamini-Hochberg correction over tested slopes.
+
+| Outcome | Scope | Odds ratio per 2x tokens | BH-adjusted p | Interpretation |
+|---|---|---:|---:|---|
+| Omission | pooled adjusted | infinite | 0.0040 | grows in main run |
+| Omission | scaled load | infinite | 0.0040 | grows in main run |
+| Exact-record error | scaled load | infinite | 0.0040 | grows in main run |
+| Any field error | fixed load | 1.09 | 0.8703 | approximately stable |
+| Action error | fixed load | 1.09 | 0.8703 | approximately stable |
+
+The infinite odds ratios are separation artifacts: all omission events occurred at the largest scaled-load bin. Sensitivity analysis shows this result disappears when parse failures are excluded or recovered with a larger completion budget.
+
+## 5. Analysis & Discussion
+
+The strongest finding is negative but useful: most factual error categories did not scale upward in this controlled experiment. With valid JSON outputs, both models almost always recovered all injected facts exactly, even at roughly 24k-token source length.
+
+The unstable category was not hallucination, numeric drift, date drift, or entity substitution. It was a format/visible-output failure under combined high context, high fact count, and an insufficient completion budget. This matters operationally because users often interpret empty or malformed outputs as model failure, but the recovery check shows the underlying long-context retrieval was still available when the output budget was increased.
+
+`gpt-4.1-mini` was more robust under the fixed 5,000-token cap in this setup: it completed all 24 tasks, including the 24k/32-fact scaled-load cases, with zero omissions and only two action-field errors. `gpt-5-mini` was perfect on valid outputs but had two high-load empty responses caused by length termination.
+
+For the user's broader question, this suggests that transfer to human-impractical regimes may depend less on source length alone than on total task budget: context length, number of facts to summarize, output schema size, and hidden reasoning-token allocation. If the budget is sufficient, the models maintained the advantage in this pilot. If not, errors can grow abruptly rather than gradually.
+
+## 6. Limitations
+
+The injected facts were synthetic and intentionally identifiable as compliance incident notes. Real summarization often requires deciding salience and resolving implicit facts, which may produce more omissions or relation errors.
+
+The study used only two OpenAI models, 48 main calls, and a maximum source length around 24k tokens. This is long enough to exceed typical human quick-reading workflows but far below million-token contexts.
+
+The main omission result depends on treating parse failures as omissions. That is reasonable for an end-user summarization system, but it is not the same mechanism as retrieving a fact and then forgetting to mention it.
+
+The JSON prompt constrained outputs tightly, which likely suppressed hallucinations and duplicates. More open-ended summaries may show different scaling.
+
+No human annotation was performed; the controlled ground truth enabled objective scoring but did not evaluate prose quality or narrative coherence.
+
+## 7. Conclusions & Next Steps
+
+In this pilot, stable errors included hallucinations, duplicates, entity errors, count errors, date/month errors, severity errors, and nearly all field substitutions. The error that grew with length was an abrupt output-budget/format failure for `gpt-5-mini` under the hardest scaled-load condition, not a gradual factuality decline.
+
+The most important follow-up is to sweep completion budgets and reasoning-effort settings at larger context lengths and fact counts. A second follow-up should replace synthetic incident notes with naturally occurring facts from GovReport/QMSum and evaluate whether salience-dependent omissions grow when facts are less explicitly marked.
+
+## Output Files
+
+| File | Purpose |
+|---|---|
+| `planning.md` | Preregistered motivation, hypotheses, and analysis plan. |
+| `src/error_experiment.py` | Task generation, API calls, parsing, and scoring. |
+| `src/analyze_results.py` | Statistical analysis, sensitivity summaries, and figures. |
+| `src/recovery_check.py` | High-budget recovery check for failed GPT-5 cases. |
+| `results/tasks.jsonl` | Generated task documents and ground truth. |
+| `results/model_outputs/` | Raw main-run API outputs. |
+| `results/model_outputs_high_budget/` | Raw recovery-check API outputs. |
+| `results/evaluations/run_metrics.csv` | Per-run scored metrics. |
+| `results/evaluations/record_metrics.csv` | Per-target-record metrics. |
+| `results/evaluations/length_slopes.csv` | Logistic slope estimates. |
+| `results/evaluations/sensitivity_summary.json` | Main, parse-excluded, and recovery summaries. |
+| `figures/error_rates_by_length.png` | Error-rate trends by source length. |
+| `figures/length_slope_heatmap.png` | Odds-ratio heatmap for length slopes. |
+
+## References
+
+- BooookScore, 2024, `papers/2310.00785_booookscore_book_length_summarization.pdf`.
+- LongDocFACTScore, 2024, `papers/2309.12455_longdocfactscore_long_document_factuality.pdf`.
+- FRANK factuality taxonomy, 2021, `papers/2104.13346_frank_factuality_error_typology.pdf`.
+- AggreFact, 2023, `papers/2023_acl_aggrefact_understanding_factual_errors.pdf`.
+- SummaC, 2022, `papers/2111.09525_summac_inconsistency_detection.pdf`.
+- MiniCheck, 2024, `papers/2404.10774_minicheck_llm_aggrefact.pdf`.
+- QMSum, 2021, `papers/2104.05938_qmsum_query_based_meeting_summarization.pdf`.
+- GovReport, 2021, `papers/2104.02112_govreport_efficient_attentions_long_summarization.pdf`.
+
+
+════════════════════════════════════════════════════════════════════════════════
+                            RESEARCH PLAN
+════════════════════════════════════════════════════════════════════════════════
+
+# Error Extrapolation Planning
+
+## Motivation & Novelty Assessment
+
+### Why This Research Matters
+
+Long-context LLMs are increasingly used for tasks where humans cannot practically read the whole input: regulatory reports, meeting archives, litigation discovery, scientific corpora, and operational logs. A single aggregate summary score is not enough for these settings, because a model that is mostly faithful may still fail in predictable, length-dependent ways such as omitting low-salience facts, altering numbers, or inventing plausible records.
+
+### Gap in Existing Work
+
+The gathered literature shows strong benchmarks for long-document summarization and factuality, including BooookScore, LongDocFACTScore, FRANK, AggreFact, SummaC, and MiniCheck. The main gap is that these works usually evaluate overall quality or factuality, while the present question asks how specific error types scale continuously with source length and whether those slopes transfer to regimes beyond normal human reading.
+
+### Our Novel Contribution
+
+This study creates controlled long-document summarization tasks using real long-document corpora as background text and injected audit-style facts as objective ground truth. This design allows programmatic measurement of per-type error rates across length while still using real hosted LLMs for the summarization behavior.
+
+### Experiment Justification
+
+- Experiment 1, fixed fact load: hold the number of target facts constant while increasing irrelevant context length. This isolates context dilution and tests whether hallucinations, substitutions, and omissions grow even when the summary workload is unchanged.
+- Experiment 2, scaled fact load: increase target fact count with document length. This tests the more realistic regime where longer documents contain more facts to ingest and summarize, directly addressing whether LLM advantage persists when human inspection is impractical.
+
+## Research Question
+
+As source documents grow from short to long contexts, which LLM summarization error types remain approximately stable and which increase with document length or fact load?
+
+## Background and Motivation
+
+The literature review identifies two complementary taxonomies. FRANK-style factual errors cover entity, predicate/relation, circumstance/date, coreference/discourse, out-of-source, and grammar problems. BooookScore-style long-summary errors add omissions, duplication, salience, discontinuity, and causal gaps. This project focuses on objectively measurable analogues: omissions, hallucinated records, duplicate records, entity errors, numeric errors, date errors, severity/circumstance errors, and relation/action errors.
+
+## Hypothesis Decomposition
+
+- H1: Omission rate increases with source length, especially when the number of target facts increases with length.
+- H2: Hallucination and duplication rates are more stable over length than omission rate under deterministic, JSON-constrained prompting.
+- H3: Numeric, date, and entity substitution rates grow more slowly than omissions but may increase under scaled fact load.
+- H4: Error scaling differs between context dilution and fact-load scaling, so document length alone is not a sufficient explanation.
+
+Independent variables are model, length condition, task family, source length, and target fact count. Dependent variables are per-record or per-output error rates by category. Success means producing real model outputs, objective scores, slope estimates with uncertainty, and documented limitations.
+
+## Proposed Methodology
+
+### Approach
+
+Use downloaded QMSum and GovReport documents as natural distractor context. Insert synthetic but realistic audit incidents with known fields: record id, unit, action, object, count, month, and severity. Prompt real OpenAI models to summarize every audit incident as strict JSON. Parse the outputs and compare against the known facts.
+
+This avoids simulated LLM behavior and avoids relying on fragile local factuality checkpoints. It also creates exact ground truth for error typing, which the literature review identifies as a weakness of long-document factuality work.
+
+### Experimental Steps
+
+1. Load and validate local QMSum/GovReport data; compute approximate token lengths and sample background passages.
+2. Generate deterministic injected fact sets with fixed random seed.
+3. Build two task families:
+   - fixed_load: 10 target facts at 2k, 6k, 12k, and 24k approximate input tokens.
+   - scaled_load: 4, 8, 16, and 32 target facts paired with 2k, 6k, 12k, and 24k approximate input tokens.
+4. Run real model calls with deterministic decoding where supported. Primary models: `gpt-5-mini` and `gpt-4.1-mini`, using OpenAI's authenticated model list for availability.
+5. Parse JSON outputs robustly and score each run by matching predicted records to ground-truth ids and field values.
+6. Fit per-error logistic regressions against log source length and fact count; bootstrap confidence intervals for error-rate means and slopes.
+7. Generate figures and tables, then write a reproducible report.
+
+### Baselines
+
+- Perfect extractor baseline: zero errors by construction, useful as a sanity reference for metric implementation.
+- Prompt/format baseline: JSON parse failure rate and duplicate id rate, which measure whether failures are structural rather than factual.
+- Cross-model comparison: `gpt-4.1-mini` versus `gpt-5-mini` to check whether slopes are model-specific.
+
+### Evaluation Metrics
+
+- Omission rate: missing target record ids divided by target records.
+- Hallucination rate: predicted record ids not in the source divided by predicted records.
+- Duplicate rate: repeated predicted ids divided by predicted records.
+- Entity, action, object, count, month, and severity error rates: mismatched fields among matched records.
+- Exact record accuracy: all fields correct among target records.
+- Parse failure rate: invalid or unparseable JSON outputs.
+
+These metrics map to FRANK/BooookScore-inspired categories while remaining objectively computable.
+
+### Statistical Analysis Plan
+
+Use descriptive means with bootstrap 95% confidence intervals. For hypothesis tests, fit logistic regressions for each error indicator using log2(input tokens), target fact count, model, and task family as predictors. Report slope direction, odds ratios, Wald p-values, and Benjamini-Hochberg adjusted p-values across error types. Because runs are small and generated tasks share templates, conclusions will emphasize effect sizes and confidence intervals over binary significance.
+
+## Expected Outcomes
+
+Results supporting the hypothesis would show positive slopes for omissions and possibly numeric/date errors as length or fact count increases, while hallucinations and duplicates remain flat. Results refuting it would show stable per-type error rates across length once fact count is controlled.
+
+## Timeline and Milestones
+
+- Resource review and planning: complete before implementation.
+- Environment and data setup: verify venv, dependencies, GPU, API keys, and dataset schemas.
+- Implementation: create scripts for task generation, API execution, scoring, analysis, and plotting.
+- Experimentation: run a compact but complete factorial design.
+- Analysis and documentation: save raw outputs, figures, tables, REPORT.md, README.md, and reproducibility notes.
+
+## Potential Challenges
+
+- API model parameters may differ across model families; handle unsupported temperature or response-format options with fallback logic.
+- JSON parsing may fail despite instructions; use robust extraction and report parse failures instead of silently dropping runs.
+- The task may be too easy if facts are too salient; mitigate by scattering facts through real background text and using varied prose, not a single table.
+- The compact sample size limits inference; use it as an empirical pilot and report this clearly.
+
+## Success Criteria
+
+The research succeeds if it produces real model outputs, per-error scaling estimates, generated figures/tables, reproducible code, and a report that clearly states which error categories were stable versus length-sensitive in the observed run.
+
+
+════════════════════════════════════════════════════════════════════════════════
+                          LITERATURE REVIEW
+════════════════════════════════════════════════════════════════════════════════
+
+# Literature Review: Error Extrapolation
+
+## Review Scope
+
+### Research Question
+
+How do the types and rates of LLM summarization errors change as source length increases, and which datasets, metrics, and baselines can support controlled experiments over that scaling behavior?
+
+### Inclusion Criteria
+
+- Long-document or long-context summarization benchmarks.
+- Factuality, hallucination, consistency, or coherence evaluation for generated summaries.
+- Human-annotated error taxonomies or datasets useful for labeling error types.
+- Repositories or datasets available for downstream experiments.
+- LLM-era studies prioritized, with older factuality metrics included as baselines.
+
+### Exclusion Criteria
+
+- General long-context QA papers without summarization or factuality relevance.
+- Pure model-architecture papers without reusable datasets, metrics, or evaluation protocols.
+- Paywalled papers without accessible preprint or proceedings PDF.
+
+### Search Log
+
+| Date | Query/Source | Results | Notes |
+|---|---|---:|---|
+| 2026-06-16 | paper-finder: "large language model long document summarization factual errors length scaling" | 0 usable | Local service stalled and was terminated after no output. |
+| 2026-06-16 | arXiv/web: long-document summarization factual consistency LLM benchmarks | 10+ | Found BooookScore, LongDocFACTScore, LongBench, stress-test paper. |
+| 2026-06-16 | ACL/arXiv/web: factuality error taxonomy summarization FRANK AggreFact SummaC FactCC | 8+ | Found foundational metrics and error datasets. |
+| 2026-06-16 | Hugging Face/GitHub dataset search | 5 downloaded datasets, 10 repos | Downloaded GovReport, QMSum, SQuALITY, FRANK, LongBench. |
+
+## Key Findings
+
+Long-document summarization needs separate treatment from short-news summarization. BooookScore shows that book-length summarization introduces coherence errors tied to chunk-and-combine workflows, especially omissions, discontinuity, duplication, salience, and causal gaps. The paper's most actionable result is that hierarchical merging tends to be more coherent than incremental updating, while incremental updating can preserve more detail. This is directly relevant to error extrapolation because the summarization workflow itself can create length-dependent error modes.
+
+Factuality metrics do not transfer cleanly to long contexts. LongDocFACTScore and the 2025 stress-test paper both show that metrics designed for short inputs struggle with long evidence, truncation, retrieval choices, and information-dense claims. Sentence-level retrieval before scoring is a practical workaround, but metric stability still varies by domain, perturbation, and evidence dispersion.
+
+Error types should be measured separately. FRANK provides factual error categories such as predicate, entity, circumstance, coreference, discourse-link, out-of-article, and grammar errors. BooookScore adds long-summary coherence categories such as entity omission, event omission, causal omission, discontinuity, salience, language, inconsistency, and duplication. These taxonomies are complementary: FRANK is source-grounded factuality; BooookScore is summary-internal coherence at book scale.
+
+Benchmarks must match the target model era. AggreFact shows that apparent metric improvements are often concentrated on summaries from older systems rather than modern summarizers. Experiments for this project should generate fresh summaries from current LLMs, then evaluate by error type instead of relying only on old benchmark outputs.
+
+## Key Papers
+
+### BooookScore
+
+- Contribution: First systematic study of LLM book-length summarization with hierarchical and incremental workflows.
+- Data/method: 100 recently published books, GPT-4 summaries, 1,193 fine-grained human annotations.
+- Error taxonomy: entity omission, event omission, causal omission, discontinuity, salience, language, inconsistency, duplication.
+- Results: Hierarchical merging usually had higher BooookScore; incremental updating preserved more detail but made more coherence errors.
+- Relevance: Best direct template for length-scaling experiments and error-category measurement.
+
+### LongDocFACTScore
+
+- Contribution: Reference-free long-document factuality framework that retrieves evidence snippets per summary sentence before applying BARTScore.
+- Data/method: LongSciVerify with PubMed and ArXiv long documents, expert factuality annotations, plus LongEval PubMed.
+- Results: LongDocFACTScore correlated better with human factuality judgments than ROUGE, BERTScore, FactCC, QuestEval, and vanilla BARTScore on the reported long-document datasets.
+- Relevance: Provides a local long-document factuality baseline and data.
+
+### Stress Testing Factual Consistency Metrics for Long-Document Summarization
+
+- Contribution: Tests six reference-free metrics under seven meaning-preserving perturbations.
+- Metrics: BARTScore, SummaC-Conv, SummaC-ZS, AlignScore, MiniCheck, UniEval.
+- Datasets: SQuALITY, LexAbSumm, ScholarQABench.
+- Findings: Many metrics change scores under paraphrase/simplification/negation despite preserved meaning. MiniCheck and UniEval are comparatively robust but still imperfect.
+- Relevance: Provides perturbation ideas for measuring metric sensitivity as length and claim density increase.
+
+### FRANK
+
+- Contribution: Fine-grained factuality benchmark over CNN/DailyMail and XSum summaries.
+- Data: 2,250 annotated summaries from 9 summarization systems.
+- Error taxonomy: predicate, entity, circumstance, coreference, discourse-link, out-of-article, grammar.
+- Relevance: Good training/validation source for factual error type classifiers.
+
+### AggreFact
+
+- Contribution: Aggregates nine factuality annotation datasets and stratifies by summarizer generation.
+- Finding: No single factuality metric is uniformly best; metric performance varies by dataset, model era, and error type.
+- Relevance: Warns against drawing conclusions from a single factuality metric or older summarizer outputs.
+
+### SummaC, FactCC, MiniCheck, and FIB
+
+- SummaC: Strong practical NLI-based consistency metric using sentence-level document-summary alignment.
+- FactCC: Historical weakly supervised factual consistency baseline with generated perturbations.
+- MiniCheck: Efficient sentence-level grounded fact checker with strong LLM-era performance, but model weights may need download/GPU.
+- FIB: LLM factuality preference benchmark over news summaries; useful conceptually but less aligned with long documents.
+
+## Datasets in the Literature
+
+- GovReport: 19k government reports with long expert summaries; good primary long-document summarization dataset.
+- QMSum: 1,808 query-summary pairs over 232 meetings; useful for testing long transcript summarization.
+- SQuALITY: Long stories with question-focused summaries; high quality and small enough for careful evaluation.
+- LongBench: Compact long-context benchmark with summarization subsets, useful for length-controlled evaluation.
+- FRANK/AggreFact/LongSciVerify: Factuality/error annotations for calibrating metrics and classifiers.
+
+## Standard Baselines
+
+- Summarization workflows: direct full-context summarization, truncation, hierarchical map-reduce, incremental/refine, retrieve-then-summarize.
+- Factuality metrics: MiniCheck, SummaC-Conv, LongDocFACTScore, FactCC, BARTScore, QuestEval, ROUGE/BERTScore as non-factuality controls.
+- Error taxonomies: FRANK for factual grounding errors; BooookScore for long-summary coherence errors.
+
+## Evaluation Metrics
+
+- Error rate per summary sentence, grouped by error type.
+- Factual support score per sentence using MiniCheck or LongDocFACTScore.
+- Coherence score using BooookScore-style annotations.
+- ROUGE/BERTScore only as auxiliary reference-overlap metrics, not as factuality proxies.
+- Stratified analysis by source length bins, summary length, input domain, workflow, and model.
+
+## Gaps and Opportunities
+
+- There is little direct evidence on how each error type scales continuously with document length.
+- Long-document factuality metrics are sensitive to retrieval and semantic perturbations.
+- Most available error datasets are short-news or older-model outputs, so fresh LLM-generated summaries should be labeled or automatically screened.
+- Book-length datasets are often inaccessible due to copyright, so GovReport, QMSum, SQuALITY, and LongBench are more reproducible starting points.
+
+## Recommendations for Experiment Design
+
+- Primary datasets: GovReport for long reports, QMSum for transcripts, SQuALITY for smaller high-quality long stories, LongBench for compact length-controlled subsets.
+- Length bins: use token counts from QMSum directly; compute report/story token counts for GovReport and SQuALITY; include LongBench `_e` subsets where available.
+- Generation workflows: compare direct full-context summaries where the model supports it, hierarchical map-reduce, incremental/refine, and truncation.
+- Metrics: use at least two factuality metrics, preferably MiniCheck and LongDocFACTScore/SummaC, plus a BooookScore-inspired coherence classifier or LLM judge.
+- Analysis: report total error rate and per-type slopes against source length. Treat metric disagreement as a result, not just noise.
+
+
+════════════════════════════════════════════════════════════════════════════════
+                          PAPER REQUIREMENTS
+════════════════════════════════════════════════════════════════════════════════
+
+Generate a complete academic paper with the following structure:
+
+1. TITLE
+   - Clear, specific, informative
+   - Should convey main finding or contribution
+
+2. AUTHOR
+   - Use this exact author line in the \author{} block: Ari Holtzman and NeuriCo
+
+3. ABSTRACT (150-250 words)
+   - Problem statement
+   - Approach
+   - Key results
+   - Significance
+
+4. INTRODUCTION
+   - Research problem and motivation
+   - Gap in existing work
+   - Our contribution (be specific)
+   - Paper organization
+
+5. RELATED WORK
+   - Organized by theme/approach
+   - Position our work relative to prior work
+   - Cite papers from literature review
+
+6. METHODOLOGY
+   - Clear description of approach
+   - Experimental setup
+   - Datasets used
+   - Evaluation metrics
+   - Baselines
+
+7. RESULTS
+   - Present results with tables and figures
+   - Statistical analysis
+   - Comparison to baselines
+   - Ablation studies (if applicable)
+
+8. DISCUSSION
+   - Interpretation of results
+   - Limitations
+   - Broader implications
+
+9. CONCLUSION
+   - Summary of contributions
+   - Key findings
+   - Future work
+
+10. REFERENCES
+   - BibTeX format
+   - All cited papers
+
+════════════════════════════════════════════════════════════════════════════════
+                          OUTPUT FORMAT
+════════════════════════════════════════════════════════════════════════════════
+
+Create a MODULAR LaTeX project with the following directory structure:
+
+paper_draft/
+├── main.tex              # Main file that imports all sections
+├── references.bib        # BibTeX references
+├── sections/
+│   ├── abstract.tex      # Abstract content
+│   ├── introduction.tex  # Introduction section
+│   ├── related_work.tex  # Related work section
+│   ├── methodology.tex   # Methodology section
+│   ├── results.tex       # Results section
+│   ├── discussion.tex    # Discussion section
+│   └── conclusion.tex    # Conclusion section
+├── figures/              # Directory for any generated figures
+├── tables/               # Directory for complex standalone tables
+└── appendix/             # Directory for appendix sections (if needed)
+
+INSTRUCTIONS:
+1. First, create the directory structure above (mkdir -p paper_draft/sections paper_draft/figures paper_draft/tables paper_draft/appendix)
+2. Write main.tex using the EXACT preamble for NEURIPS:
+
+   \documentclass{article}
+   \usepackage[final]{neurips_2025}  % NEURIPS style (neurips_2025.sty is in paper_draft/)
+   \usepackage[hidelinks]{hyperref}  % REQUIRED: clickable links
+   \usepackage{booktabs}  % REQUIRED: professional tables
+   \usepackage{graphicx}
+   \usepackage{amsmath,amssymb}
+
+   % Import command files
+   \input{commands/math}
+   \input{commands/general}
+   \input{commands/macros}
+
+   % Use this bibliography style:
+   \bibliographystyle{plainnat}
+
+   \author{Ari Holtzman and NeuriCo}
+
+   - Use \input{sections/...} to include each section
+   - Use \bibliography{references} for references
+3. Write each section file with COMPLETE content (no placeholders)
+4. Each section file should include its \section{} command
+5. Write references.bib with all citations in BibTeX format
+6. After writing all files, compile the paper:
+   cd paper_draft && pdflatex -interaction=nonstopmode main.tex && bibtex main && pdflatex -interaction=nonstopmode main.tex && pdflatex -interaction=nonstopmode main.tex
+
+This modular structure allows humans to easily:
+- Edit individual sections without navigating a large file
+- Track changes per section
+- Reuse sections across different paper versions
+
+════════════════════════════════════════════════════════════════════════════════
+                          QUALITY REQUIREMENTS
+════════════════════════════════════════════════════════════════════════════════
+
+- Academic tone throughout
+- All claims must be supported by data from the experiment report
+- Proper citations using \cite{} commands
+- Clear figures and tables with proper captions
+- NO placeholder text - every section must have real content
+- The paper MUST compile without errors
+- If compilation fails, debug and fix the LaTeX errors
+
+════════════════════════════════════════════════════════════════════════════════
+                          LAB WRITING STYLE
+════════════════════════════════════════════════════════════════════════════════
+
+Follow these lab-specific conventions to match our paper style:
+
+1. LANGUAGE STYLE:
+   - Use active voice: "We propose", "We examine", "We focus on"
+   - Be direct and confident: "Our main question is...", "We hypothesize that..."
+   - State things clearly and simply - prefer plain language over jargon
+   - Use bold questions as paragraph organizers: {\bf what is X?}
+   - Include specific quantitative claims: "8.97% over baseline"
+   - Avoid fancy wording: "utilize" → "use", "facilitate" → "help"
+
+2. INTRODUCTION STRUCTURE:
+   - Engaging hook (get to the point quickly)
+   - Problem importance
+   - Gap identification
+   - Your approach with method figure reference
+   - Quantitative preview of results
+   - Contribution bullets (3-4 items, action verbs)
+
+3. CONTRIBUTION LISTS:
+   \begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+       \item We propose...
+       \item We conduct...
+       \item We complement...
+   \end{itemize}
+
+4. MODULAR COMMANDS STRUCTURE:
+   Command templates are pre-copied to paper_draft/commands/:
+   - math.tex: Math notation macros
+   - general.tex: Formatting macros
+   - macros.tex: Project-specific term definitions (customize this for your paper)
+
+   In main.tex, include:
+   \input{commands/math}
+   \input{commands/general}
+   \input{commands/macros}
+
+5. REFERENCE CONVENTIONS:
+   Use reference macros from math.tex:
+   - \figref{fig:name} for "figure 1" (lowercase, in-sentence)
+   - \Figref{fig:name} for "Figure 1" (capitalized, start of sentence)
+   - \secref{sec:name} for "section 2"
+
+6. TEXT FORMATTING:
+   - Use \para{Header text} for bold paragraph headers
+   - Define method/dataset names with \textsc and \xspace:
+     \newcommand{\methodname}{\textsc{MethodName}\xspace}
+
+7. TABLE FORMATTING:
+   - Use booktabs package (no vertical lines)
+   - Use \resizebox{\textwidth}{!}{...} for wide tables
+   - Use @{} to remove padding at table edges
+   - Use \cmidrule(lr){x-y} for sub-headers
+   - Use \textsc{} for dataset/method names in headers
+   - Bold best results with {\bf ...}
+
+8. FIGURE FORMATTING:
+   - Use 0.32\textwidth for 3-column subfigures
+   - Use 0.95\linewidth for full-width figures
+   - Use \input{figures/legend} for shared legends
+   - Write self-contained captions explaining key observations
+
+9. RESULTS PRESENTATION:
+   - Define \increase and \decrease for colored arrows (green up, red down)
+   - Bold best results in tables
+   - Report confidence intervals when available
+
+10. ALGORITHM STYLING:
+    - Use algpseudocode with [noend]
+    - Use \triangleright for comments
+
+11. HYPERLINKS (REQUIRED):
+    - Always use \usepackage[hidelinks]{hyperref} or with colored links
+    - All citations, section refs, figure refs, table refs must be clickable
+    - This is essential for reader navigation
+
+════════════════════════════════════════════════════════════════════════════════
+                          WORKFLOW: REVIEW AND REFLECT
+════════════════════════════════════════════════════════════════════════════════
+
+Before calling finish, you MUST complete these review steps:
+
+1. REVIEW RESOURCES (at the start):
+   - Read .codex/skills/paper-writer/SKILL.md for detailed guidance
+   - Study templates/paper_writing/lab_style_guide.md for style conventions
+   - Browse paper_examples/ for formatting and language patterns
+
+2. SELF-REFLECTION (before finishing):
+   After writing all sections, review your work against these criteria:
+
+   LANGUAGE CHECK:
+   - [ ] Is the writing clear and jargon-free?
+   - [ ] Are claims specific with quantitative support?
+   - [ ] Is active voice used throughout?
+
+   FORMATTING CHECK:
+   - [ ] Does main.tex include \input{commands/math}, \input{commands/general}, \input{commands/macros}?
+   - [ ] Is hyperref package included for clickable references?
+   - [ ] Do tables use booktabs (no vertical lines)?
+   - [ ] Are best results bolded in tables?
+   - [ ] Are figures/tables properly captioned?
+
+   STRUCTURE CHECK:
+   - [ ] Does introduction follow: hook → importance → gap → approach → preview → contributions?
+   - [ ] Are contribution bullets specific with action verbs?
+   - [ ] Does the paper compile without errors?
+
+3. FIX ISSUES:
+   - Address any issues found in the self-reflection
+   - Re-compile and verify the PDF looks correct
+
+Only after completing this review should you consider the paper finished.

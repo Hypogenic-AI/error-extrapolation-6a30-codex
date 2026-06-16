@@ -1,0 +1,51 @@
+{
+  "task_id": "scaled_load-2000-2",
+  "model": "gpt-4.1-mini",
+  "created_utc": "2026-06-16T14:41:38.137777+00:00",
+  "elapsed_seconds": 6.318044900894165,
+  "actual_document_tokens": 1925,
+  "fact_count": 4,
+  "family": "scaled_load",
+  "target_tokens": 2000,
+  "response_content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-015-01\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"inspected\",\n      \"object\": \"335 meeting transcripts\",\n      \"count\": 335,\n      \"month\": \"November 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-015-02\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"archived\",\n      \"object\": \"717 expense waivers\",\n      \"count\": 717,\n      \"month\": \"August 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-015-03\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"inspected\",\n      \"object\": \"44 training records\",\n      \"count\": 44,\n      \"month\": \"August 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-015-04\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"escalated\",\n      \"object\": \"125 meeting transcripts\",\n      \"count\": 125,\n      \"month\": \"July 2025\",\n      \"severity\": \"low\"\n    }\n  ]\n}",
+  "raw_response": {
+    "id": "chatcmpl-DrPGmspKx0i3HqJdh5Cgn99akI9gy",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-015-01\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"inspected\",\n      \"object\": \"335 meeting transcripts\",\n      \"count\": 335,\n      \"month\": \"November 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-015-02\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"archived\",\n      \"object\": \"717 expense waivers\",\n      \"count\": 717,\n      \"month\": \"August 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-015-03\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"inspected\",\n      \"object\": \"44 training records\",\n      \"count\": 44,\n      \"month\": \"August 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-015-04\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"escalated\",\n      \"object\": \"125 meeting transcripts\",\n      \"count\": 125,\n      \"month\": \"July 2025\",\n      \"severity\": \"low\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1781620892,
+    "model": "gpt-4.1-mini-2025-04-14",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": "fp_75121d4089",
+    "usage": {
+      "completion_tokens": 279,
+      "prompt_tokens": 2139,
+      "total_tokens": 2418,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  }
+}

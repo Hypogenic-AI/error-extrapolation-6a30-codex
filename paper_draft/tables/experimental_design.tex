@@ -1,0 +1,15 @@
+\begin{table}[t]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}llcl@{}}
+        \toprule
+        \textbf{Family} & \textbf{Length bins} & \textbf{Target facts} & \textbf{Purpose} \\
+        \midrule
+        \fixedload & 2k, 6k, 12k, 24k & 10 at every length & Isolate context dilution with fixed summary workload. \\
+        \scaledload & 2k, 6k, 12k, 24k & 4, 8, 16, 32 & Test growth in context length and fact workload together. \\
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{Experimental design. Each model-family-length condition has three replicates, giving 48 main model calls across two models, two task families, four length bins, and three replicates.}
+    \label{tab:design}
+\end{table}

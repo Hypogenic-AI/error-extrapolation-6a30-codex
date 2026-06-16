@@ -1,0 +1,17 @@
+PDF: papers/2310.00785_booookscore_book_length_summarization.pdf
+Total pages: 35
+Pages per chunk: 3
+
+Chunks:
+  2310.00785_booookscore_book_length_summarization_chunk_001.pdf: pages 1-3
+  2310.00785_booookscore_book_length_summarization_chunk_002.pdf: pages 4-6
+  2310.00785_booookscore_book_length_summarization_chunk_003.pdf: pages 7-9
+  2310.00785_booookscore_book_length_summarization_chunk_004.pdf: pages 10-12
+  2310.00785_booookscore_book_length_summarization_chunk_005.pdf: pages 13-15
+  2310.00785_booookscore_book_length_summarization_chunk_006.pdf: pages 16-18
+  2310.00785_booookscore_book_length_summarization_chunk_007.pdf: pages 19-21
+  2310.00785_booookscore_book_length_summarization_chunk_008.pdf: pages 22-24
+  2310.00785_booookscore_book_length_summarization_chunk_009.pdf: pages 25-27
+  2310.00785_booookscore_book_length_summarization_chunk_010.pdf: pages 28-30
+  2310.00785_booookscore_book_length_summarization_chunk_011.pdf: pages 31-33
+  2310.00785_booookscore_book_length_summarization_chunk_012.pdf: pages 34-35

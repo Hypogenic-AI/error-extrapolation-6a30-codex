@@ -1,0 +1,51 @@
+{
+  "task_id": "scaled_load-6000-1",
+  "model": "gpt-5-mini",
+  "created_utc": "2026-06-16T14:55:28.424834+00:00",
+  "elapsed_seconds": 35.41520690917969,
+  "actual_document_tokens": 5932,
+  "fact_count": 8,
+  "family": "scaled_load",
+  "target_tokens": 6000,
+  "response_content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-017-01\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"merged\",\n      \"object\": \"shipment manifests\",\n      \"count\": 360,\n      \"month\": \"June 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-017-02\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"archived\",\n      \"object\": \"access badges\",\n      \"count\": 721,\n      \"month\": \"April 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-017-03\",\n      \"unit\": \"Delta Safety Board\",\n      \"action\": \"inspected\",\n      \"object\": \"supplier invoices\",\n      \"count\": 332,\n      \"month\": \"December 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-017-04\",\n      \"unit\": \"Lumen Archives Unit\",\n      \"action\": \"inspected\",\n      \"object\": \"expense waivers\",\n      \"count\": 686,\n      \"month\": \"November 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-017-05\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"reconciled\",\n      \"object\": \"safety forms\",\n      \"count\": 521,\n      \"month\": \"October 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-017-06\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"delayed\",\n      \"object\": \"sensor logs\",\n      \"count\": 545,\n      \"month\": \"August 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-017-07\",\n      \"unit\": \"Lumen Archives Unit\",\n      \"action\": \"redirected\",\n      \"object\": \"expense waivers\",\n      \"count\": 898,\n      \"month\": \"November 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-017-08\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"delayed\",\n      \"object\": \"calibration files\",\n      \"count\": 353,\n      \"month\": \"October 2025\",\n      \"severity\": \"critical\"\n    }\n  ]\n}",
+  "raw_response": {
+    "id": "chatcmpl-DrPTh7XfIgwNEFmEyap3FXrwfYAPN",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-017-01\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"merged\",\n      \"object\": \"shipment manifests\",\n      \"count\": 360,\n      \"month\": \"June 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-017-02\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"archived\",\n      \"object\": \"access badges\",\n      \"count\": 721,\n      \"month\": \"April 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-017-03\",\n      \"unit\": \"Delta Safety Board\",\n      \"action\": \"inspected\",\n      \"object\": \"supplier invoices\",\n      \"count\": 332,\n      \"month\": \"December 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-017-04\",\n      \"unit\": \"Lumen Archives Unit\",\n      \"action\": \"inspected\",\n      \"object\": \"expense waivers\",\n      \"count\": 686,\n      \"month\": \"November 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-017-05\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"reconciled\",\n      \"object\": \"safety forms\",\n      \"count\": 521,\n      \"month\": \"October 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-017-06\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"delayed\",\n      \"object\": \"sensor logs\",\n      \"count\": 545,\n      \"month\": \"August 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-017-07\",\n      \"unit\": \"Lumen Archives Unit\",\n      \"action\": \"redirected\",\n      \"object\": \"expense waivers\",\n      \"count\": 898,\n      \"month\": \"November 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-017-08\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"delayed\",\n      \"object\": \"calibration files\",\n      \"count\": 353,\n      \"month\": \"October 2025\",\n      \"severity\": \"critical\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1781621693,
+    "model": "gpt-5-mini-2025-08-07",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 2405,
+      "prompt_tokens": 6145,
+      "total_tokens": 8550,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 1856,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  }
+}

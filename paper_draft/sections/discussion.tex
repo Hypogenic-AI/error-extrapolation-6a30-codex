@@ -1,0 +1,17 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\para{The main failure mode is abrupt, not gradual.}
+The experiment was designed to find which factual errors grow with length. In this controlled setting, most did not grow. Hallucinated ids, duplicate ids, unit errors, count errors, month errors, severity errors, and object errors are all zero in the main run. The only observed field substitutions are two action errors. The strongest length effect is instead a structural failure: \gptfivemini spends the 5,000-token completion budget before emitting visible JSON in two high-load runs.
+
+\para{Output budget is part of long-context reliability.}
+This matters because users often experience an empty or invalid output as a summarization failure, even when the model may have internally identified the needed facts. The recovery check shows that the two failed tasks are solvable by the same model when the completion budget is raised. For long-context systems, source length, target fact count, output schema size, and hidden reasoning-token allocation are therefore coupled. Evaluation should report these quantities alongside factuality metrics.
+
+\para{The result does not imply long summaries are solved.}
+Our injected facts are synthetic and intentionally identifiable as compliance incident notes. Real summarization often requires deciding salience, resolving implicit references, and synthesizing events across sentences. The JSON schema also constrains outputs tightly, which likely suppresses hallucinations and duplicates. A free-form prose summary could show more relation errors, discourse errors, or salience-dependent omissions.
+
+\para{Scope and limitations.}
+The study uses two OpenAI models, 48 main calls, three replicates per condition, and a maximum source length of roughly 24k tokens. This is long enough to exceed routine human quick-reading workflows, but far below million-token contexts. The main omission result also depends on treating parse failures as omissions. That is appropriate for an end-user extraction system, but it is not the same mechanism as retrieving a fact and then choosing not to mention it. Finally, the controlled ground truth avoids human annotation cost, but it does not evaluate prose quality, narrative coherence, or whether the selected facts would be salient to a human summarizer.
+
+\para{Implications.}
+The practical lesson is to distinguish factual drift from budget failure. If a system is evaluated only by aggregate omission rate, the 24k-token \gptfivemini condition looks like a severe length-scaling failure. The recovery check changes the interpretation: the underlying task remains recoverable, but the original configuration is underspecified for the combined context and output workload. Budget sweeps and reasoning-effort controls should be standard in long-context factuality evaluations.

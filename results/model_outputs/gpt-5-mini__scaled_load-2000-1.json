@@ -1,0 +1,51 @@
+{
+  "task_id": "scaled_load-2000-1",
+  "model": "gpt-5-mini",
+  "created_utc": "2026-06-16T14:53:51.774474+00:00",
+  "elapsed_seconds": 14.390639781951904,
+  "actual_document_tokens": 1924,
+  "fact_count": 4,
+  "family": "scaled_load",
+  "target_tokens": 2000,
+  "response_content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-014-01\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"reconciled\",\n      \"object\": \"expense waivers\",\n      \"count\": 759,\n      \"month\": \"June 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-014-02\",\n      \"unit\": \"Aurora Records Office\",\n      \"action\": \"quarantined\",\n      \"object\": \"access badges\",\n      \"count\": 697,\n      \"month\": \"October 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-014-03\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"escalated\",\n      \"object\": \"license renewals\",\n      \"count\": 48,\n      \"month\": \"March 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-014-04\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"recoded\",\n      \"object\": \"shipment manifests\",\n      \"count\": 945,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    }\n  ]\n}",
+  "raw_response": {
+    "id": "chatcmpl-DrPST4cNHlTEeFamfuvgOE600oNHW",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-014-01\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"reconciled\",\n      \"object\": \"expense waivers\",\n      \"count\": 759,\n      \"month\": \"June 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-014-02\",\n      \"unit\": \"Aurora Records Office\",\n      \"action\": \"quarantined\",\n      \"object\": \"access badges\",\n      \"count\": 697,\n      \"month\": \"October 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-014-03\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"escalated\",\n      \"object\": \"license renewals\",\n      \"count\": 48,\n      \"month\": \"March 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-014-04\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"recoded\",\n      \"object\": \"shipment manifests\",\n      \"count\": 945,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1781621617,
+    "model": "gpt-5-mini-2025-08-07",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 992,
+      "prompt_tokens": 2137,
+      "total_tokens": 3129,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 704,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  }
+}

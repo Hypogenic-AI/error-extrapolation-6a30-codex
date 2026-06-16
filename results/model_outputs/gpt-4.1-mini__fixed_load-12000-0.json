@@ -1,0 +1,51 @@
+{
+  "task_id": "fixed_load-12000-0",
+  "model": "gpt-4.1-mini",
+  "created_utc": "2026-06-16T14:39:59.491324+00:00",
+  "elapsed_seconds": 9.309260368347168,
+  "actual_document_tokens": 11925,
+  "fact_count": 10,
+  "family": "fixed_load",
+  "target_tokens": 12000,
+  "response_content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-007-01\",\n      \"unit\": \"Aurora Records Office\",\n      \"action\": \"reconciled\",\n      \"object\": \"796 meeting transcripts\",\n      \"count\": 796,\n      \"month\": \"March 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-007-02\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"withheld\",\n      \"object\": \"571 shipment manifests\",\n      \"count\": 571,\n      \"month\": \"December 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-007-03\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"reconciled\",\n      \"object\": \"84 sensor logs\",\n      \"count\": 84,\n      \"month\": \"December 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-007-04\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"reconciled\",\n      \"object\": \"603 meeting transcripts\",\n      \"count\": 603,\n      \"month\": \"September 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-007-05\",\n      \"unit\": \"Granite Review Panel\",\n      \"action\": \"redirected\",\n      \"object\": \"322 supplier invoices\",\n      \"count\": 322,\n      \"month\": \"June 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-007-06\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"validated\",\n      \"object\": \"262 inventory tags\",\n      \"count\": 262,\n      \"month\": \"November 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-007-07\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"merged\",\n      \"object\": \"642 expense waivers\",\n      \"count\": 642,\n      \"month\": \"December 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-007-08\",\n      \"unit\": \"Delta Safety Board\",\n      \"action\": \"redirected\",\n      \"object\": \"909 safety forms\",\n      \"count\": 909,\n      \"month\": \"July 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-007-09\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"withheld\",\n      \"object\": \"808 meeting transcripts\",\n      \"count\": 808,\n      \"month\": \"July 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-007-10\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"redirected\",\n      \"object\": \"117 inspection photos\",\n      \"count\": 117,\n      \"month\": \"July 2025\",\n      \"severity\": \"low\"\n    }\n  ]\n}",
+  "raw_response": {
+    "id": "chatcmpl-DrPF8Gaq2C9uoQMPT9UHGQsOAGGrv",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-007-01\",\n      \"unit\": \"Aurora Records Office\",\n      \"action\": \"reconciled\",\n      \"object\": \"796 meeting transcripts\",\n      \"count\": 796,\n      \"month\": \"March 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-007-02\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"withheld\",\n      \"object\": \"571 shipment manifests\",\n      \"count\": 571,\n      \"month\": \"December 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-007-03\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"reconciled\",\n      \"object\": \"84 sensor logs\",\n      \"count\": 84,\n      \"month\": \"December 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-007-04\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"reconciled\",\n      \"object\": \"603 meeting transcripts\",\n      \"count\": 603,\n      \"month\": \"September 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-007-05\",\n      \"unit\": \"Granite Review Panel\",\n      \"action\": \"redirected\",\n      \"object\": \"322 supplier invoices\",\n      \"count\": 322,\n      \"month\": \"June 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-007-06\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"validated\",\n      \"object\": \"262 inventory tags\",\n      \"count\": 262,\n      \"month\": \"November 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-007-07\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"merged\",\n      \"object\": \"642 expense waivers\",\n      \"count\": 642,\n      \"month\": \"December 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-007-08\",\n      \"unit\": \"Delta Safety Board\",\n      \"action\": \"redirected\",\n      \"object\": \"909 safety forms\",\n      \"count\": 909,\n      \"month\": \"July 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-007-09\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"withheld\",\n      \"object\": \"808 meeting transcripts\",\n      \"count\": 808,\n      \"month\": \"July 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-007-10\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"redirected\",\n      \"object\": \"117 inspection photos\",\n      \"count\": 117,\n      \"month\": \"July 2025\",\n      \"severity\": \"low\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1781620790,
+    "model": "gpt-4.1-mini-2025-04-14",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": "fp_75121d4089",
+    "usage": {
+      "completion_tokens": 683,
+      "prompt_tokens": 12139,
+      "total_tokens": 12822,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  }
+}

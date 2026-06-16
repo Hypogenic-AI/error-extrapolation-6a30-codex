@@ -1,0 +1,51 @@
+{
+  "task_id": "fixed_load-24000-1",
+  "model": "gpt-4.1-mini",
+  "created_utc": "2026-06-16T14:40:35.484285+00:00",
+  "elapsed_seconds": 10.5142183303833,
+  "actual_document_tokens": 23921,
+  "fact_count": 10,
+  "family": "fixed_load",
+  "target_tokens": 24000,
+  "response_content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-011-01\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"inspected\",\n      \"object\": \"386 inventory tags\",\n      \"count\": 386,\n      \"month\": \"February 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-011-02\",\n      \"unit\": \"Aurora Records Office\",\n      \"action\": \"inspected\",\n      \"object\": \"115 shipment manifests\",\n      \"count\": 115,\n      \"month\": \"July 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-011-03\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"delayed\",\n      \"object\": \"163 inspection photos\",\n      \"count\": 163,\n      \"month\": \"July 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-011-04\",\n      \"unit\": \"Lumen Archives Unit\",\n      \"action\": \"merged\",\n      \"object\": \"283 inventory tags\",\n      \"count\": 283,\n      \"month\": \"October 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-011-05\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"inspected\",\n      \"object\": \"613 inspection photos\",\n      \"count\": 613,\n      \"month\": \"May 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-011-06\",\n      \"unit\": \"Delta Safety Board\",\n      \"action\": \"quarantined\",\n      \"object\": \"909 calibration files\",\n      \"count\": 909,\n      \"month\": \"August 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-011-07\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"isolated\",\n      \"object\": \"691 license renewals\",\n      \"count\": 691,\n      \"month\": \"July 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-011-08\",\n      \"unit\": \"Aurora Records Office\",\n      \"action\": \"delayed\",\n      \"object\": \"193 meeting transcripts\",\n      \"count\": 193,\n      \"month\": \"August 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-011-09\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"escalated\",\n      \"object\": \"293 meeting transcripts\",\n      \"count\": 293,\n      \"month\": \"October 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-011-10\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"reconciled\",\n      \"object\": \"977 training records\",\n      \"count\": 977,\n      \"month\": \"April 2025\",\n      \"severity\": \"low\"\n    }\n  ]\n}",
+  "raw_response": {
+    "id": "chatcmpl-DrPFhqcfjAJfTzukeq45MXZme9W26",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-011-01\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"inspected\",\n      \"object\": \"386 inventory tags\",\n      \"count\": 386,\n      \"month\": \"February 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-011-02\",\n      \"unit\": \"Aurora Records Office\",\n      \"action\": \"inspected\",\n      \"object\": \"115 shipment manifests\",\n      \"count\": 115,\n      \"month\": \"July 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-011-03\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"delayed\",\n      \"object\": \"163 inspection photos\",\n      \"count\": 163,\n      \"month\": \"July 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-011-04\",\n      \"unit\": \"Lumen Archives Unit\",\n      \"action\": \"merged\",\n      \"object\": \"283 inventory tags\",\n      \"count\": 283,\n      \"month\": \"October 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-011-05\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"inspected\",\n      \"object\": \"613 inspection photos\",\n      \"count\": 613,\n      \"month\": \"May 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-011-06\",\n      \"unit\": \"Delta Safety Board\",\n      \"action\": \"quarantined\",\n      \"object\": \"909 calibration files\",\n      \"count\": 909,\n      \"month\": \"August 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-011-07\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"isolated\",\n      \"object\": \"691 license renewals\",\n      \"count\": 691,\n      \"month\": \"July 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-011-08\",\n      \"unit\": \"Aurora Records Office\",\n      \"action\": \"delayed\",\n      \"object\": \"193 meeting transcripts\",\n      \"count\": 193,\n      \"month\": \"August 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-011-09\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"escalated\",\n      \"object\": \"293 meeting transcripts\",\n      \"count\": 293,\n      \"month\": \"October 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-011-10\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"reconciled\",\n      \"object\": \"977 training records\",\n      \"count\": 977,\n      \"month\": \"April 2025\",\n      \"severity\": \"low\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1781620825,
+    "model": "gpt-4.1-mini-2025-04-14",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": "fp_75121d4089",
+    "usage": {
+      "completion_tokens": 684,
+      "prompt_tokens": 24135,
+      "total_tokens": 24819,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+\begin{table}[t]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}llccl@{}}
+        \toprule
+        \textbf{Outcome} & \textbf{Scope} & \textbf{Odds ratio per 2x tokens} & \textbf{BH-adjusted $p$} & \textbf{Interpretation} \\
+        \midrule
+        Omission & Pooled adjusted & $\infty$ & {\bf 0.0040} & Grows in the main run. \\
+        Omission & Scaled load & $\infty$ & {\bf 0.0040} & Grows in the main run. \\
+        Exact-record error & Scaled load & $\infty$ & {\bf 0.0040} & Grows in the main run. \\
+        Any field error & Fixed load & 1.09 & 0.8703 & Approximately stable. \\
+        Action error & Fixed load & 1.09 & 0.8703 & Approximately stable. \\
+        \bottomrule
+    \end{tabular}
+    }
+    \caption{Logistic length-slope tests. Infinite odds ratios indicate separation: all omission events occur in the largest scaled-load bin. Significant values are in \textbf{bold}.}
+    \label{tab:slopes}
+\end{table}

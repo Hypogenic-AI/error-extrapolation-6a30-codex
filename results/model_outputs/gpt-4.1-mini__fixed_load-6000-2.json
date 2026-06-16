@@ -1,0 +1,51 @@
+{
+  "task_id": "fixed_load-6000-2",
+  "model": "gpt-4.1-mini",
+  "created_utc": "2026-06-16T14:39:50.180943+00:00",
+  "elapsed_seconds": 9.57811450958252,
+  "actual_document_tokens": 5924,
+  "fact_count": 10,
+  "family": "fixed_load",
+  "target_tokens": 6000,
+  "response_content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-006-01\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"isolated\",\n      \"object\": \"599 access badges\",\n      \"count\": 599,\n      \"month\": \"October 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-006-02\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"quarantined\",\n      \"object\": \"680 expense waivers\",\n      \"count\": 680,\n      \"month\": \"October 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-006-03\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"validated\",\n      \"object\": \"740 inventory tags\",\n      \"count\": 740,\n      \"month\": \"June 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-006-04\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"inspected\",\n      \"object\": \"694 safety forms\",\n      \"count\": 694,\n      \"month\": \"November 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-006-05\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"archived\",\n      \"object\": \"16 sensor logs\",\n      \"count\": 16,\n      \"month\": \"August 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-006-06\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"merged\",\n      \"object\": \"525 access badges\",\n      \"count\": 525,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-006-07\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"quarantined\",\n      \"object\": \"385 access badges\",\n      \"count\": 385,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-006-08\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"merged\",\n      \"object\": \"316 inspection photos\",\n      \"count\": 316,\n      \"month\": \"October 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-006-09\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"merged\",\n      \"object\": \"961 calibration files\",\n      \"count\": 961,\n      \"month\": \"November 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-006-10\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"escalated\",\n      \"object\": \"918 sensor logs\",\n      \"count\": 918,\n      \"month\": \"February 2025\",\n      \"severity\": \"moderate\"\n    }\n  ]\n}",
+  "raw_response": {
+    "id": "chatcmpl-DrPEyunubeag0g1IqlC1wz5uPhxLD",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-006-01\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"isolated\",\n      \"object\": \"599 access badges\",\n      \"count\": 599,\n      \"month\": \"October 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-006-02\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"quarantined\",\n      \"object\": \"680 expense waivers\",\n      \"count\": 680,\n      \"month\": \"October 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-006-03\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"validated\",\n      \"object\": \"740 inventory tags\",\n      \"count\": 740,\n      \"month\": \"June 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-006-04\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"inspected\",\n      \"object\": \"694 safety forms\",\n      \"count\": 694,\n      \"month\": \"November 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-006-05\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"archived\",\n      \"object\": \"16 sensor logs\",\n      \"count\": 16,\n      \"month\": \"August 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-006-06\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"merged\",\n      \"object\": \"525 access badges\",\n      \"count\": 525,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-006-07\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"quarantined\",\n      \"object\": \"385 access badges\",\n      \"count\": 385,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-006-08\",\n      \"unit\": \"Harbor Systems Group\",\n      \"action\": \"merged\",\n      \"object\": \"316 inspection photos\",\n      \"count\": 316,\n      \"month\": \"October 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-006-09\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"merged\",\n      \"object\": \"961 calibration files\",\n      \"count\": 961,\n      \"month\": \"November 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-006-10\",\n      \"unit\": \"Cedar Logistics Cell\",\n      \"action\": \"escalated\",\n      \"object\": \"918 sensor logs\",\n      \"count\": 918,\n      \"month\": \"February 2025\",\n      \"severity\": \"moderate\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1781620780,
+    "model": "gpt-4.1-mini-2025-04-14",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": "fp_75121d4089",
+    "usage": {
+      "completion_tokens": 679,
+      "prompt_tokens": 6138,
+      "total_tokens": 6817,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  }
+}

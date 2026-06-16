@@ -1,0 +1,6 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We study how error types change as long-context summarization tasks grow in source length and target fact load. Using natural \qmsum and \govreport background text with injected compliance-incident ground truth, we score 48 main runs from \gptfourmini and \gptfivemini at record and field level. The key finding is that ordinary factual errors are nearly stable in valid outputs: hallucinations and duplicates are zero, most field-error categories are zero, and only two action-field errors appear.
+
+The only strong length-dependent failure is an output-budget failure for \gptfivemini at 24k source tokens and 32 target facts. Raising the completion-token cap recovers both failed runs with zero omissions and zero field errors. Future work should sweep completion budgets, reasoning-effort settings, larger contexts, and less explicit naturally occurring facts. The central takeaway is that long-context summarization reliability should be evaluated by error mechanism, not only by aggregate error rate.

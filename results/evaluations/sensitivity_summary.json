@@ -1,0 +1,30 @@
+{
+  "main_all_runs": {
+    "n_runs": 48,
+    "parse_failures": 2,
+    "mean_omission_rate": 0.041666666666666664,
+    "mean_hallucination_rate": 0.0,
+    "mean_duplicate_rate": 0.0,
+    "mean_any_field_error_rate_matched": 0.004347826086956522,
+    "mean_exact_record_rate_target": 0.9541666666666666
+  },
+  "excluding_parse_failures": {
+    "n_runs": 46,
+    "parse_failures": 0,
+    "mean_omission_rate": 0.0,
+    "mean_hallucination_rate": 0.0,
+    "mean_duplicate_rate": 0.0,
+    "mean_any_field_error_rate_matched": 0.004347826086956522,
+    "mean_exact_record_rate_target": 0.9956521739130434
+  },
+  "high_budget_recovery_failed_cases": {
+    "n_runs": 2,
+    "parse_failures": 0,
+    "mean_omission_rate": 0.0,
+    "mean_hallucination_rate": 0.0,
+    "mean_duplicate_rate": 0.0,
+    "mean_any_field_error_rate_matched": 0.0,
+    "mean_reasoning_tokens": 2656.0,
+    "mean_completion_tokens": 4803.0
+  }
+}

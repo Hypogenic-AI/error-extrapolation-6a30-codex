@@ -1,0 +1,51 @@
+{
+  "task_id": "fixed_load-12000-1",
+  "model": "gpt-5-mini",
+  "created_utc": "2026-06-16T14:50:45.841196+00:00",
+  "elapsed_seconds": 36.076913595199585,
+  "actual_document_tokens": 11925,
+  "fact_count": 10,
+  "family": "fixed_load",
+  "target_tokens": 12000,
+  "response_content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-008-01\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"escalated\",\n      \"object\": \"safety forms\",\n      \"count\": 601,\n      \"month\": \"May 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-008-02\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"isolated\",\n      \"object\": \"expense waivers\",\n      \"count\": 360,\n      \"month\": \"December 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-008-03\",\n      \"unit\": \"Granite Review Panel\",\n      \"action\": \"isolated\",\n      \"object\": \"training records\",\n      \"count\": 125,\n      \"month\": \"July 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-008-04\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"reconciled\",\n      \"object\": \"inspection photos\",\n      \"count\": 453,\n      \"month\": \"January 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-008-05\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"inspected\",\n      \"object\": \"sensor logs\",\n      \"count\": 978,\n      \"month\": \"November 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-008-06\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"archived\",\n      \"object\": \"inventory tags\",\n      \"count\": 875,\n      \"month\": \"February 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-008-07\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"escalated\",\n      \"object\": \"inventory tags\",\n      \"count\": 425,\n      \"month\": \"June 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-008-08\",\n      \"unit\": \"Lumen Archives Unit\",\n      \"action\": \"escalated\",\n      \"object\": \"training records\",\n      \"count\": 137,\n      \"month\": \"April 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-008-09\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"inspected\",\n      \"object\": \"inventory tags\",\n      \"count\": 773,\n      \"month\": \"March 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-008-10\",\n      \"unit\": \"Granite Review Panel\",\n      \"action\": \"merged\",\n      \"object\": \"supplier invoices\",\n      \"count\": 318,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    }\n  ]\n}",
+  "raw_response": {
+    "id": "chatcmpl-DrPP8BFNP07c2PCnZKDcXJvLeCTVw",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\n  \"records\": [\n    {\n      \"record_id\": \"IR-008-01\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"escalated\",\n      \"object\": \"safety forms\",\n      \"count\": 601,\n      \"month\": \"May 2025\",\n      \"severity\": \"low\"\n    },\n    {\n      \"record_id\": \"IR-008-02\",\n      \"unit\": \"Beacon Finance Desk\",\n      \"action\": \"isolated\",\n      \"object\": \"expense waivers\",\n      \"count\": 360,\n      \"month\": \"December 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-008-03\",\n      \"unit\": \"Granite Review Panel\",\n      \"action\": \"isolated\",\n      \"object\": \"training records\",\n      \"count\": 125,\n      \"month\": \"July 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-008-04\",\n      \"unit\": \"Elm Training Unit\",\n      \"action\": \"reconciled\",\n      \"object\": \"inspection photos\",\n      \"count\": 453,\n      \"month\": \"January 2025\",\n      \"severity\": \"moderate\"\n    },\n    {\n      \"record_id\": \"IR-008-05\",\n      \"unit\": \"Falcon Procurement Team\",\n      \"action\": \"inspected\",\n      \"object\": \"sensor logs\",\n      \"count\": 978,\n      \"month\": \"November 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-008-06\",\n      \"unit\": \"Juniper Field Office\",\n      \"action\": \"archived\",\n      \"object\": \"inventory tags\",\n      \"count\": 875,\n      \"month\": \"February 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-008-07\",\n      \"unit\": \"Iris Compliance Team\",\n      \"action\": \"escalated\",\n      \"object\": \"inventory tags\",\n      \"count\": 425,\n      \"month\": \"June 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-008-08\",\n      \"unit\": \"Lumen Archives Unit\",\n      \"action\": \"escalated\",\n      \"object\": \"training records\",\n      \"count\": 137,\n      \"month\": \"April 2025\",\n      \"severity\": \"critical\"\n    },\n    {\n      \"record_id\": \"IR-008-09\",\n      \"unit\": \"Keystone Audit Cell\",\n      \"action\": \"inspected\",\n      \"object\": \"inventory tags\",\n      \"count\": 773,\n      \"month\": \"March 2025\",\n      \"severity\": \"high\"\n    },\n    {\n      \"record_id\": \"IR-008-10\",\n      \"unit\": \"Granite Review Panel\",\n      \"action\": \"merged\",\n      \"object\": \"supplier invoices\",\n      \"count\": 318,\n      \"month\": \"May 2025\",\n      \"severity\": \"moderate\"\n    }\n  ]\n}",
+          "refusal": null,
+          "role": "assistant",
+          "annotations": [],
+          "audio": null,
+          "function_call": null,
+          "tool_calls": null
+        }
+      }
+    ],
+    "created": 1781621410,
+    "model": "gpt-5-mini-2025-08-07",
+    "object": "chat.completion",
+    "moderation": null,
+    "service_tier": "default",
+    "system_fingerprint": null,
+    "usage": {
+      "completion_tokens": 2475,
+      "prompt_tokens": 12138,
+      "total_tokens": 14613,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 1792,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    }
+  }
+}
